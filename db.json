@@ -1,0 +1,111 @@
+{
+    "projects": [
+        {   "id":1,
+            "title":"Random Thoughts",
+            "short_description":"A simple app to share your thoughts to other people",
+            "github":"www.github.com/roskee/random-thoughts",
+            "playstore":"play.google.com/random-thoughts",
+            "video" :"localhost/static/videos/random-thoughts",
+            "made_with":["Flutter","Firebase"],
+            "platforms":["Android","iOS"]
+        },
+        {
+            "id":2,
+            "title":"Ethio Betting Tips",
+            "short_description":"An app for football fans to look for betting tips",
+            "github":"www.github.com/roskee/ethio-betting-tips",
+            "playstore":"play.google.com/ethio-betting-tips",
+            "video" :"localhost/static/videos/ethio-betting-tips",
+            "made_with":["Flutter","Firebase"],
+            "platforms":["Android","iOS"]
+        },
+        {
+            "id":3,
+            "title": "Detective",
+            "short_description": "A game that takes a user to a detective carrier",
+            "github":"www.github.com/roskee/detective",
+            "playstore":"play.google.com/detective",
+            "video":"localhost/static/videos/detective",
+            "made_with":["Flutter","Firebase"],
+            "platforms":["Android","iOS"]
+        }
+    ],
+    "skills":[
+        {
+            "title":"Flutter",
+            "since":2019,
+            "description":"I have created more than 5 mobile apps",
+            "certificates":[
+                "LinkedIn",
+                "Udemy",
+                "Google"
+            ]
+        },
+        {
+            "title":"NodeJS",
+            "since":2020,
+            "description":"I created this websites API and 2 other APIs",
+            "certificates":[
+                "LinkedIn",
+                "Google"
+            ]
+        },
+        {
+            "title":"C++",
+            "since":2017,
+            "description":"This was my first programming language",
+            "certificates":[
+                "Google",
+                "LinkedIn"
+            ]
+        },
+        {
+            "title":"Java",
+            "since":2017,
+            "description":"I can say this is my Native programming language",
+            "certificates":[
+                "LinkedIn",
+                "Udemy",
+                "Google"
+            ]
+        }
+    ],
+    "about":{
+        "name":"Kirubel Adamu",
+        "age":"23",
+        "short_description":"I am Kirubel Adamu. I am a Junior Software Engineer recently graduated from Addis Ababa Science and Technology University. I am passionate about developing mobile apps to simplify user's daily life and taking part in the gaming industry to tailor popular video games to the culture I grew upon. Currently I am working as a Mobile Application Developer at SafariCom.et. I am working with flutter and Native Java to develop, maintain and test various applications my company currently has deployed",
+        "history":"My history Extended",
+        "education":[
+            {
+                "title": "BSc. Software Engineerig",
+                "school":"Addis Ababa Science and Technology University",
+                "grade":"3.87"
+            }
+        ],
+        "top_certificates":[
+            {
+                "title":"CISCO",
+                "school":"Udemy.com"
+            }
+        ],
+        "phones":["+251918410746","+251967493716"],
+        "emails":["kirubeladamu@gmail.com","kirub33@yahoo.com"],
+        "github":"www.github.com/roskee",
+        "linkedIn":"www.linkedin.com/kirubel-adamu",
+        "calendy":"www.calendy.com/kirubel.adamu"
+    },
+    "companies":[
+        {
+            "name":"360Ground",
+            "website":"www.360ground.com"
+        },
+        {
+            "name":"dereja.com",
+            "website":"www.derega.com"
+        },
+        {
+            "name":"SafariCom",
+            "website":"www.safaricom.com.et"
+        }
+    ]
+}
