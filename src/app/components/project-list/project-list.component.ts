@@ -12,7 +12,7 @@ export class ProjectListComponent implements OnInit {
   constructor(private projectService: ProjectsService) { }
 
   ngOnInit(): void {
-    this.projectService.getProjects().subscribe((projects)=>(this.projects = projects));
+    this.projectService.getFeaturedProjects().subscribe((projects)=>(this.projects = projects));
   }
 
 }

@@ -14,7 +14,8 @@
                     "description":"This is the home page of the app",
                     "src":"randomThoughts/images/home.jpg"
                 }
-            ]
+            ],
+            "featured":true
         },
         {
             "id":2,
@@ -31,7 +32,8 @@
                     "description":"This is the home page of the app",
                     "src":"randomThoughts/images/home.jpg"
                 }
-            ]
+            ],
+            "featured":true
         },
         {
             "id":3,
@@ -48,7 +50,8 @@
                     "description":"This is the home page of the app",
                     "src":"randomThoughts/images/home.jpg"
                 }
-            ]
+            ],
+            "featured":false
         }
     ],
     "skills":[

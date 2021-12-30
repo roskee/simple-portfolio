@@ -2,9 +2,9 @@
     <div class="card-header">
       <h2>My Featured Projects</h2>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col" *ngFor="let project of projects">
+    <div class=".container">
+      <div class="row row-cols-auto">
+        <div class="col ms-3" *ngFor="let project of projects">
           <app-project-card [project] = project></app-project-card>
         </div>
         

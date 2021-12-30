@@ -11,6 +11,9 @@ export class ProjectsService {
   getProjects():Observable<Project[]>{
     return this.http.get<Project[]>(this.apiUrl);
   }
+  getFeaturedProjects():Observable<Project[]>{
+    return this.http.get<Project[]>(this.apiUrl+"?featured=true");
+  }
   getProjectWithId(id:number):Observable<Project>{
     return this.http.get<Project>(this.apiUrl+`/${id}`)
   }
