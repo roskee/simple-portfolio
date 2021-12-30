@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title: string = 'Task Tracker'
-  constructor() { }
+  currentUrl: string = '/';
+  subscription$
+  constructor(private location: Location) {
+    this.subscription$ = location.onUrlChange((url) => {
+      this.currentUrl = url;
+    });
+  }
 
   ngOnInit(): void {
   }

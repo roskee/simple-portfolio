@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AboutInfo } from 'src/interfaces/aboutInfo';
 import { AboutService } from '../../services/about.service';
 @Component({
@@ -8,10 +9,9 @@ import { AboutService } from '../../services/about.service';
 })
 export class AboutPageComponent implements OnInit {
   aboutInfo: AboutInfo = {} as AboutInfo;
-  constructor(private aboutService: AboutService) { }
+  constructor(private router: Router, private aboutService: AboutService) { }
 
   ngOnInit(): void {
     this.aboutService.getAboutInfo().subscribe((aboutInfo) => (this.aboutInfo = aboutInfo));
   }
-
 }

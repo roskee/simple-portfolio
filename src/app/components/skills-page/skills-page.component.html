@@ -11,7 +11,7 @@
                         <div class="fw-bold">{{certificate.title}}</div>
                         <em><small>{{certificate.date}}</small></em>
                     </div>
-                    <div class='card m-2 p-2' style="width: 115px;" (click)="viewImage(certificate.image)">
+                    <div class='card m-2 p-2 btn' style="width: 115px;" (click)="viewImage(certificate.image)">
                         <img src="http://localhost:5000/{{certificate.image}}" width="100px"
                             *ngIf="certificate.image!=null">
                     </div>

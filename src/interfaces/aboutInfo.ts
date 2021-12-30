@@ -1,15 +1,18 @@
-interface Education {
+export interface Education {
     title: string;
     school: string;
-    grade: string;
+    grade: number;
+    gradeBase: number;
 }
-interface Certificate {
+export interface Certificate {
     title: string;
     school: string;
 }
 export interface AboutInfo {
     name: string;
     age: number;
+    nationality: string;
+    residence: string;
     short_description: string;
     earlyLife: string;
     workHistory: string;
