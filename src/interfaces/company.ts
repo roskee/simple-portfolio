@@ -1,4 +1,4 @@
-export interface Company{
-    name:string;
-    website:string;
+export interface Company {
+    name: string;
+    website: string;
 }

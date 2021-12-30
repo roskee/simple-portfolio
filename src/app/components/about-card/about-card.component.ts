@@ -8,11 +8,11 @@ import { AboutInfo } from 'src/interfaces/aboutInfo';
   styleUrls: ['./about-card.component.css']
 })
 export class AboutCardComponent implements OnInit {
-  aboutInfo:AboutInfo = {} as AboutInfo;
-  constructor(private aboutService:AboutService) { }
+  aboutInfo: AboutInfo = {} as AboutInfo;
+  constructor(private aboutService: AboutService) { }
 
   ngOnInit(): void {
-    this.aboutService.getAboutInfo().subscribe((aboutInfo)=>(this.aboutInfo = aboutInfo));
+    this.aboutService.getAboutInfo().subscribe((aboutInfo) => (this.aboutInfo = aboutInfo));
   }
 
 }

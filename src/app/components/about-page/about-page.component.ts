@@ -7,11 +7,11 @@ import { AboutService } from '../../services/about.service';
   styleUrls: ['./about-page.component.css']
 })
 export class AboutPageComponent implements OnInit {
-  aboutInfo:AboutInfo = {} as AboutInfo;
+  aboutInfo: AboutInfo = {} as AboutInfo;
   constructor(private aboutService: AboutService) { }
 
   ngOnInit(): void {
-    this.aboutService.getAboutInfo().subscribe((aboutInfo)=>(this.aboutInfo = aboutInfo));
+    this.aboutService.getAboutInfo().subscribe((aboutInfo) => (this.aboutInfo = aboutInfo));
   }
 
 }

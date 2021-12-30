@@ -8,11 +8,11 @@ import { Project } from 'src/interfaces/project';
   styleUrls: ['./projects-page.component.css']
 })
 export class ProjectsPageComponent implements OnInit {
-  projects:Project[]=[];
-  constructor(private projectsService:ProjectsService) { }
+  projects: Project[] = [];
+  constructor(private projectsService: ProjectsService) { }
 
   ngOnInit(): void {
-    this.projectsService.getProjects().subscribe((projects)=>(this.projects = projects));
+    this.projectsService.getProjects().subscribe((projects) => (this.projects = projects));
   }
 
 }

@@ -9,13 +9,13 @@ import { Project } from 'src/interfaces/project';
   styleUrls: ['./project-view.component.css']
 })
 export class ProjectViewComponent implements OnInit {
-  project:Project={ } as Project;
-  projectId:number = -1;
-  constructor(private route:ActivatedRoute ,private projectService:ProjectsService) { }
+  project: Project = {} as Project;
+  projectId: number = -1;
+  constructor(private route: ActivatedRoute, private projectService: ProjectsService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params)=>{
-      this.projectService.getProjectWithId(params['id']).subscribe((project)=>(this.project = project));
+    this.route.params.subscribe((params) => {
+      this.projectService.getProjectWithId(params['id']).subscribe((project) => (this.project = project));
     });
   }
 

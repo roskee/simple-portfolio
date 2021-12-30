@@ -15,45 +15,51 @@
     </div>
     <div class=".container">
       <div class="row">
-         <div class="col-lg-6">
-           <div class='card mb-2'>
-             <div class='card-header'><h2>Details</h2></div>
-             <div class='card-body'>
+        <div class="col-lg-6">
+          <div class='card mb-2'>
+            <div class='card-header'>
+              <h2>Details</h2>
+            </div>
+            <div class='card-body'>
               <div class="row m-2">
                 <div class="col-sm-4">Made with:</div>
                 <div class="col-sm-8  ">
-                  <span class='badge bg-success rounded-pill me-2' *ngFor="let made of project.made_with">{{made}}</span>
+                  <span class='badge bg-success rounded-pill me-2'
+                    *ngFor="let made of project.made_with">{{made}}</span>
                 </div>
               </div>
               <div class="row m-2">
                 <div class="col-sm-4">Supported Platforms:</div>
                 <div class="col-sm-8">
-                  <span class='badge bg-success rounded-pill me-2' *ngFor="let platform of project.platforms">{{platform}}</span>
+                  <span class='badge bg-success rounded-pill me-2'
+                    *ngFor="let platform of project.platforms">{{platform}}</span>
                 </div>
               </div>
               <div class="row m-2">
                 <div class="col-sm-4">GitHub Repository:</div>
                 <div class="col-sm-8">
-                  <span >
-                    <a href= "http://{{project.github}}"  target="_blank" rel="noopener noreferrer">
-                    Click here</a></span>
+                  <span>
+                    <a href="http://{{project.github}}" target="_blank" rel="noopener noreferrer">
+                      Click here</a></span>
                 </div>
               </div>
               <div class="row m-2">
                 <div class="col-sm-4">Playstore Link:</div>
                 <div class="col-sm-8">
-                  <span  >
-                    <a href= "http://{{project.playstore}}"  target="_blank" rel="noopener noreferrer">
-                    Click here</a></span>
+                  <span>
+                    <a href="http://{{project.playstore}}" target="_blank" rel="noopener noreferrer">
+                      Click here</a></span>
                 </div>
               </div>
-             </div>
-           </div>
-         </div>
-         <div class="col-lg-6">
-           <div class ='card mb-2'>
-             <div class='card-header'><h2>Images</h2></div>
-             <div class='card-body'>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class='card mb-2'>
+            <div class='card-header'>
+              <h2>Images</h2>
+            </div>
+            <div class='card-body'>
               <div class=".container-fluid">
                 <div class="row row-cols-auto">
                   <div class='col' *ngFor='let image of project.images'>
@@ -62,14 +68,14 @@
 
                 </div>
               </div>
-             </div>
-           </div>
-         </div>
+            </div>
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
 
 
-    
+
 
 
 

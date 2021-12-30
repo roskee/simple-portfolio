@@ -1,1 +1,22 @@
-<p>skills-page works!</p>
+<div class='.container'>
+    <div class='card p-3 m-3' *ngFor='let skill of skills'>
+        <h4>{{skill.title}}</h4>
+        <em>Since - {{skill.since}}</em>
+        <p>{{skill.description}}</p>
+        <div class='.container' *ngIf='skill.certificates.length>0'>
+            <h6 class='h6 ms-2'>Certificates</h6>
+            <div class='row row-cols-auto'>
+                <div class='card col m-2 shadow' *ngFor='let certificate of skill.certificates'>
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{certificate.title}}</div>
+                        <em><small>{{certificate.date}}</small></em>
+                    </div>
+                    <div class='card m-2 p-2' style="width: 115px;" (click)="viewImage(certificate.image)">
+                        <img src="http://localhost:5000/{{certificate.image}}" width="100px"
+                            *ngIf="certificate.image!=null">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

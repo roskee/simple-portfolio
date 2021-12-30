@@ -6,10 +6,11 @@
                 {{opinion.date}}
             </figcaption>
             <blockquote class="blockquote">
-                <p><em>{{opinion.content.substring(0,700)}}</em><span *ngIf='opinion.content.length>700'> . . .<div class="btn btn-link" (click)="navigate(opinion.id)">Continue</div></span></p>
+                <p><em>{{opinion.content.substring(0,700)}}</em><span *ngIf='opinion.content.length>700'> . . .<div
+                            class="btn btn-link" (click)="navigate(opinion.id)">Continue</div></span></p>
             </blockquote>
-            
+
         </figure>
     </div>
-   
+
 </div>

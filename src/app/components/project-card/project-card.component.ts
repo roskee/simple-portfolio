@@ -9,10 +9,10 @@ import { Project } from 'src/interfaces/project';
 })
 export class ProjectCardComponent implements OnInit {
   @Input() project: Project = {} as Project;
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
   ngOnInit(): void {
   }
   navigate(): void {
-    this.router.navigate(['projectview',this.project.id]);
+    this.router.navigate(['projectview', this.project.id]);
   }
 }

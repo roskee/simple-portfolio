@@ -9,14 +9,14 @@ import { Opinion } from 'src/interfaces/opinion';
   styleUrls: ['./opinions-page.component.css']
 })
 export class OpinionsPageComponent implements OnInit {
-  opinions:Opinion[]=[];
-  
-  constructor(private opinionService:OpinionService,private router:Router) { }
+  opinions: Opinion[] = [];
+
+  constructor(private opinionService: OpinionService, private router: Router) { }
 
   ngOnInit(): void {
-    this.opinionService.getOpinions().subscribe((opinions)=>(this.opinions = opinions));
+    this.opinionService.getOpinions().subscribe((opinions) => (this.opinions = opinions));
   }
-  navigate(id:number): void{
-    this.router.navigate(['opinionview',id])
+  navigate(id: number): void {
+    this.router.navigate(['opinionview', id])
   }
 }

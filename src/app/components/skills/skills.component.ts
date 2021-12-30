@@ -9,13 +9,13 @@ import { Skill } from 'src/interfaces/skill';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  skills:Skill[] = [];
-  companies:Company[] = [];
-  constructor(private skillService:AboutService) { }
+  skills: Skill[] = [];
+  companies: Company[] = [];
+  constructor(private skillService: AboutService) { }
 
   ngOnInit(): void {
-    this.skillService.getSkills().subscribe((skills)=>(this.skills = skills));
-    this.skillService.getCompanies().subscribe((companies)=>(this.companies = companies));
+    this.skillService.getSkills().subscribe((skills) => (this.skills = skills));
+    this.skillService.getCompanies().subscribe((companies) => (this.companies = companies));
   }
 
 }

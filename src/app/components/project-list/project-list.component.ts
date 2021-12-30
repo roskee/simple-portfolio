@@ -8,11 +8,11 @@ import { Project } from 'src/interfaces/project';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  projects:Project[] = [];
+  projects: Project[] = [];
   constructor(private projectService: ProjectsService) { }
 
   ngOnInit(): void {
-    this.projectService.getFeaturedProjects().subscribe((projects)=>(this.projects = projects));
+    this.projectService.getFeaturedProjects().subscribe((projects) => (this.projects = projects));
   }
 
 }

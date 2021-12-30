@@ -10,14 +10,14 @@ import { Skill } from 'src/interfaces/skill';
 })
 export class AboutService {
   private apiUrl = "http://localhost:5000";
-  constructor(private http:HttpClient) { }
-  getAboutInfo():Observable<AboutInfo>{
-    return this.http.get<AboutInfo>(this.apiUrl+"/about");
+  constructor(private http: HttpClient) { }
+  getAboutInfo(): Observable<AboutInfo> {
+    return this.http.get<AboutInfo>(this.apiUrl + "/about");
   }
-  getSkills():Observable<Skill[]>{
-    return this.http.get<Skill[]>(this.apiUrl+"/skills");
+  getSkills(): Observable<Skill[]> {
+    return this.http.get<Skill[]>(this.apiUrl + "/skills");
   }
-  getCompanies():Observable<Company[]>{
-    return this.http.get<Company[]>(this.apiUrl+"/companies");
+  getCompanies(): Observable<Company[]> {
+    return this.http.get<Company[]>(this.apiUrl + "/companies");
   }
 }
