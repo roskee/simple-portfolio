@@ -11,7 +11,9 @@ export interface AboutInfo{
     name:string;
     age:number;
     short_description:string;
-    history:string;
+    earlyLife:string;
+    workHistory:string;
+    passionAndGoal:string;
     education:Array<Education>;
     top_certificates:Array<Certificate>;
     phones:Array<string>;

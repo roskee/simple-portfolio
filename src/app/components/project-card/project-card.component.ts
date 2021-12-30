@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Project } from 'src/interfaces/project';
 
 @Component({
@@ -8,9 +9,10 @@ import { Project } from 'src/interfaces/project';
 })
 export class ProjectCardComponent implements OnInit {
   @Input() project: Project = {} as Project;
-  constructor() { }
-
+  constructor(private router:Router) { }
   ngOnInit(): void {
   }
-
+  navigate(): void {
+    this.router.navigate(['projectview',this.project.id]);
+  }
 }

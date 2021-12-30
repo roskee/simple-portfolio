@@ -5,9 +5,16 @@
             "short_description":"A simple app to share your thoughts to other people",
             "github":"www.github.com/roskee/random-thoughts",
             "playstore":"play.google.com/random-thoughts",
-            "video" :"localhost/static/videos/random-thoughts",
+            "video" :"randomThoughts/videos/intro.mp4",
             "made_with":["Flutter","Firebase"],
-            "platforms":["Android","iOS"]
+            "platforms":["Android","iOS"],
+            "images":[
+                {
+                    "title":"Home",
+                    "description":"This is the home page of the app",
+                    "src":"randomThoughts/images/home.jpg"
+                }
+            ]
         },
         {
             "id":2,
@@ -17,7 +24,14 @@
             "playstore":"play.google.com/ethio-betting-tips",
             "video" :"localhost/static/videos/ethio-betting-tips",
             "made_with":["Flutter","Firebase"],
-            "platforms":["Android","iOS"]
+            "platforms":["Android","iOS"],
+            "images":[
+                {
+                    "title":"Home",
+                    "description":"This is the home page of the app",
+                    "src":"randomThoughts/images/home.jpg"
+                }
+            ]
         },
         {
             "id":3,
@@ -27,7 +41,14 @@
             "playstore":"play.google.com/detective",
             "video":"localhost/static/videos/detective",
             "made_with":["Flutter","Firebase"],
-            "platforms":["Android","iOS"]
+            "platforms":["Android","iOS"],
+            "images":[
+                {
+                    "title":"Home",
+                    "description":"This is the home page of the app",
+                    "src":"randomThoughts/images/home.jpg"
+                }
+            ]
         }
     ],
     "skills":[
@@ -74,7 +95,9 @@
         "name":"Kirubel Adamu",
         "age":"23",
         "short_description":"I am Kirubel Adamu. I am a Junior Software Engineer recently graduated from Addis Ababa Science and Technology University. I am passionate about developing mobile apps to simplify user's daily life and taking part in the gaming industry to tailor popular video games to the culture I grew upon. Currently I am working as a Mobile Application Developer at SafariCom.et. I am working with flutter and Native Java to develop, maintain and test various applications my company currently has deployed",
-        "history":"My history Extended",
+        "earlyLife":"My history Extended",
+        "workHistory":"My Work History",
+        "passionAndGoal":"My passiona and future goal",
         "education":[
             {
                 "title": "BSc. Software Engineerig",
@@ -106,6 +129,20 @@
         {
             "name":"SafariCom",
             "website":"www.safaricom.com.et"
+        }
+    ],
+    "opinions":[
+        {
+            "id":1,
+            "title":"My Native Language",
+            "date":"2020-12-12",
+            "content":"My first programming language was C++ predictably. But it wasn't the language that I became native at. Java was my second but 'Native' language for me because everything with java always makes sense for me. C++, on the other hand, is full of so many confusing and ambigious code that I always become frustrated after a few hours of using it. But I don't remember being annoyed while working with Java. It is just flawless and straightforward to work with and most importantly the builtin documentation gives you the power to explore new plugins and features without having to check them out on google or stackoverflow"
+        },
+        {
+            "id":2,
+            "title":"What Should I Learn",
+            "date":"2020-12-12",
+            "content":"Yes, This is the most annoying question almost every one of us face when we finish the basic programming courses like C++ and Java. Should I learn Web, Mobile, Desktop, AI, Database, Security, Gaming, Design, et cetera the choices are limitless. Even if you do decide on one of this, the next, even harder, question is the choice of languages, frameworks, libraries and data stores to start your journey. React, Angular, Native Javascript, ASP.Net, Vue, and many annoyingly many frameworks just for frontend web development. Java, NodeJS, PHP, SpringBoot, Laravel, C#, C++, DJango, and many languages to work on your backend. Ufff!!! This is becoming more and more complex without any hint of a solution. In conclusion, my experience with this was that I decided to work on the field I was really interested on, which was mobile app development, and then I chased frameworks and languages that big corporates currently use. The reason for this was that languages and frameworks that big companies like microsoft and google use don't change that much. This gives me the advantage of not wasting my time on something that is going to be obselute in the next few years or months."
         }
     ]
 }

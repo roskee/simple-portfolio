@@ -17,13 +17,36 @@ import { ProjectViewComponent } from './components/project-view/project-view.com
 import { OpinionsPageComponent } from './components/opinions-page/opinions-page.component';
 import { SearchViewComponent } from './components/search-view/search-view.component';
 import { SkillsPageComponent } from './components/skills-page/skills-page.component';
+import { OpinionViewComponent } from './components/opinion-view/opinion-view.component';
 
 const appRoutes: Routes = [
   {
-    path:'',component:HomeComponent
+    path: '',
+    component: HomeComponent
   },
   {
-    path:'about',component:AboutPageComponent
+    path: 'about',
+    component: AboutPageComponent
+  },
+  {
+    path:'projects',
+    component:ProjectsPageComponent
+  },
+  {
+    path:'opinions',
+    component:OpinionsPageComponent
+  },
+  {
+    path:'skills',
+    component:SkillsPageComponent
+  },
+  {
+    path:'projectview/:id',
+    component:ProjectViewComponent
+  },
+  {
+    path:'opinionview/:id',
+    component:OpinionViewComponent
   }
 ]
 @NgModule({
@@ -41,11 +64,12 @@ const appRoutes: Routes = [
     ProjectViewComponent,
     OpinionsPageComponent,
     SearchViewComponent,
-    SkillsPageComponent
+    SkillsPageComponent,
+    OpinionViewComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,RouterModule.forRoot(appRoutes,{enableTracing:true})
+    HttpClientModule, RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
