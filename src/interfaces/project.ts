@@ -3,14 +3,20 @@ interface Image {
     src: string;
     description: string;
 }
+interface Platform{
+    platform: string;
+}
+interface Tool{
+    tool: string;
+}
 export interface Project {
     id?: number;
     title: string;
-    short_description: string;
+    shortDescription: string;
     github: string;
     playstore: string;
     video: string;
     images: Array<Image>;
-    made_with: Array<string>;
-    platforms: Array<string>;
+    madeWith: Array<Tool>;
+    platforms: Array<Platform>;
 }

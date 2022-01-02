@@ -10,7 +10,7 @@
         <h2>{{project.title}}</h2>
       </div>
       <div class='card-body'>
-        <h6 class='display-6'>{{project.short_description}}</h6>
+        <h6 class='display-6'>{{project.shortDescription}}</h6>
       </div>
     </div>
     <div class=".container">
@@ -25,14 +25,14 @@
                 <div class="col-sm-4">Made with:</div>
                 <div class="col-sm-8  ">
                   <span class='badge bg-primary rounded-pill me-2'
-                    *ngFor="let made of project.made_with">{{made}}</span>
+                    *ngFor="let made of project.madeWith">{{made.tool}}</span>
                 </div>
               </div>
               <div class="row m-2">
                 <div class="col-sm-4">Supported Platforms:</div>
                 <div class="col-sm-8">
                   <span class='badge bg-primary rounded-pill me-2'
-                    *ngFor="let platform of project.platforms">{{platform}}</span>
+                    *ngFor="let platform of project.platforms">{{platform.platform}}</span>
                 </div>
               </div>
               <div class="row m-2">
