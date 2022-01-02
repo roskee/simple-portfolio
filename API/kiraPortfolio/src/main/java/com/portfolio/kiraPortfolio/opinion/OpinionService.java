@@ -18,4 +18,8 @@ public class OpinionService {
   public List<Opinion> getOpinions(){
     return opinionRepository.findAll();
   }
+
+  public Opinion getOpinionById(Long id) {
+    return opinionRepository.findById(id).orElse(null);
+  }
 }

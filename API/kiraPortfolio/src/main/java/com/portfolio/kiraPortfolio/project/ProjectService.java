@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ProjectService {
   private final ProjectRepository projectRepository;
@@ -17,5 +19,14 @@ public class ProjectService {
 
   public Project addProject(Project project) {
     return projectRepository.save(project);
+  }
+
+  public Project getProject(Long id) {
+    Optional<Project> project = projectRepository.findById(id);
+    return project.orElse(null);
+  }
+
+  public List<Project> getProjectsWithFeatured(Boolean featured){
+    return projectRepository.findByFeatured(featured);
   }
 }

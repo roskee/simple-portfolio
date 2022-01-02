@@ -21,4 +21,8 @@ public class OpinionController {
   public Opinion addOpinion(@RequestBody Opinion opinion){
     return opinionService.addOpinion(opinion);
   }
+  @PostMapping(path = "{id}")
+  public Opinion getOpinionWithId(@PathVariable Long id){
+    return opinionService.getOpinionById(id);
+  }
 }
