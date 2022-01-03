@@ -24,6 +24,15 @@ public class Education {
   @JoinColumn(name = "about")
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   private About about;
+
+  public About getAbout() {
+    return about;
+  }
+
+  public void setAbout(About about) {
+    this.about = about;
+  }
+
   public Long getId() {
     return id;
   }

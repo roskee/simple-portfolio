@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
 @Repository
-public interface SkillRepository extends JpaRepository<Skill,Long> {
-
+public interface CertificateRepository extends JpaRepository<Certificate,Long> {
+  @Query(value = "select * from Certificate c where c.top_certificate=true",nativeQuery = true)
+  List<Certificate> getTopCertificates();
 }

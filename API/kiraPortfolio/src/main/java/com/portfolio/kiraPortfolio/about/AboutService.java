@@ -18,4 +18,10 @@ public class AboutService {
   public About addAbout(About about){
     return aboutRepository.save(about);
   }
+
+  public About getOneAbout() {
+    List<About> abouts = aboutRepository.findAll();
+    if(abouts.size()>0) return abouts.get(0);
+    return null;
+  }
 }

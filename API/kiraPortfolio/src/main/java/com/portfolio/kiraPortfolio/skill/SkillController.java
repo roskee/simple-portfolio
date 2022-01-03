@@ -17,8 +17,14 @@ public class SkillController {
   public List<Skill> getSkills(){
     return skillService.getSkills();
   }
+  @GetMapping(path = "topCertificates")
+  public List<Certificate> getTopCertificates(){
+    return skillService.getTopCertificates();
+  }
   @PostMapping
   public Skill addSkill(@RequestBody Skill skill){
+    //System.out.println(skill);
     return skillService.addSkill(skill);
   }
+
 }

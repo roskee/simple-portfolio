@@ -1,32 +1,22 @@
 package com.portfolio.kiraPortfolio.skill;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
 @Entity
 @Table
 public class CertificationImage {
-  public CertificationImage() {
-  }
-
-  public CertificationImage(Long id, String src, Certificate certificate) {
-    this.id = id;
-    this.src = src;
-    this.certificate = certificate;
-  }
-
   @Id
-  @SequenceGenerator(
-    name = "skill_sequence",
-    sequenceName = "skill_sequence"
-  )
   @GeneratedValue(
-    generator = "skill_sequence",
-    strategy = GenerationType.SEQUENCE
+    strategy = GenerationType.IDENTITY
   )
   private Long id;
   private String src;
+  public CertificationImage(){
+
+  }
 
   public Long getId() {
     return id;
@@ -44,19 +34,17 @@ public class CertificationImage {
     this.src = src;
   }
 
-  public Certificate getCertificate() {
-    return certificate;
+  public CertificationImage(Long id, String src){
+    this.id = id;
+    this.src= src;
   }
-
-  public void setCertificate(Certificate certificate) {
-    this.certificate = certificate;
-  }
-
   @OneToOne(
-    fetch = FetchType.LAZY,
-    optional = false
+    optional = false,
+    fetch = FetchType.EAGER
   )
   @JoinColumn(name = "certificate")
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+  @JsonBackReference
   private Certificate certificate;
+  public void setCertificate(Certificate certificate){this.certificate = certificate;}
+  public Certificate getCertificate(){return certificate;}
 }

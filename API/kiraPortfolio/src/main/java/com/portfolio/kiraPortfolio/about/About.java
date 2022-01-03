@@ -156,4 +156,34 @@ public class About {
     cascade = CascadeType.ALL
   )
   private Set<Email> emails = new HashSet<>();
+
+  public Set<Education> getEducations() {
+    return educations;
+  }
+
+  public void setEducations(Set<Education> educations) {
+    this.educations = educations;
+    for(Education education:educations)
+      education.setAbout(this);
+  }
+
+  public Set<Phone> getPhones() {
+    return phones;
+  }
+
+  public void setPhones(Set<Phone> phones) {
+    this.phones = phones;
+    for(Phone phone:phones)
+      phone.setAbout(this);
+  }
+
+  public Set<Email> getEmails() {
+    return emails;
+  }
+
+  public void setEmails(Set<Email> emails) {
+    this.emails = emails;
+    for(Email email:emails)
+      email.setAbout(this);
+  }
 }

@@ -32,6 +32,14 @@ public class Phone {
     this.id = id;
   }
 
+  public About getAbout() {
+    return about;
+  }
+
+  public void setAbout(About about) {
+    this.about = about;
+  }
+
   public String getPhone() {
     return phone;
   }

@@ -37,6 +37,14 @@ public class Email {
     return email;
   }
 
+  public About getAbout() {
+    return about;
+  }
+
+  public void setAbout(About about) {
+    this.about = about;
+  }
+
   public void setEmail(String email) {
     this.email = email;
   }

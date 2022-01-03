@@ -17,6 +17,10 @@ public class AboutController {
   public List<About> getAbouts(){
     return aboutService.getAbouts();
   }
+  @GetMapping(path = "one")
+  public About getOneAbout(){
+    return aboutService.getOneAbout();
+  }
   @PostMapping
   public About addAbout(@RequestBody About about){
     return aboutService.addAbout(about);

@@ -1,6 +1,7 @@
 package com.portfolio.kiraPortfolio.skill;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
@@ -8,15 +9,10 @@ import java.util.Set;
 
 @Entity
 @Table
-public class Skill {
+public class Skill implements Serializable {
   @Id
-  @SequenceGenerator(
-    name = "skill_sequence",
-    sequenceName = "skill_sequence"
-  )
   @GeneratedValue(
-    generator = "skill_sequence",
-    strategy = GenerationType.SEQUENCE
+    strategy = GenerationType.IDENTITY
   )
   private Long id;
   private String title;
@@ -35,6 +31,59 @@ public class Skill {
   public Skill() {
   }
 
-  @OneToMany (mappedBy = "skill",cascade = CascadeType.ALL)
+  @OneToMany (mappedBy = "skill",cascade = CascadeType.ALL,orphanRemoval = true)
   private Set<Certificate> certificates = new HashSet<>();
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public LocalDate getSince() {
+    return since;
+  }
+
+  public void setSince(LocalDate since) {
+    this.since = since;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public Set<Certificate> getCertificates() {
+    return certificates;
+  }
+
+  public void setCertificates(Set<Certificate> certificates) {
+    this.certificates = certificates;
+    for(Certificate certificate:certificates)
+      certificate.setSkill(this);
+  }
+
+  @Override
+  public String toString() {
+    return "Skill{" +
+      "id=" + id +
+      ", title='" + title + '\'' +
+      ", since=" + since +
+      ", description='" + description + '\'' +
+      ", certificates=" + certificates +
+      '}';
+  }
 }
