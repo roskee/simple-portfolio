@@ -3,7 +3,7 @@
   <div class='card m-1 p-2'>
     <div class='card-header'>Hello, There</div>
     <div class='card-body'>
-      <p>{{aboutInfo.short_description}}</p>
+      <p>{{aboutInfo.shortDescription}}</p>
     </div>
   </div>
   <div class="accordion" id="aboutAccordion">
@@ -50,7 +50,7 @@
                       <div class='row row-cols-2'>
                         <div class='col-6'>Phones:</div>
                         <div class='row' row-cols-1>
-                          <div class='col-12' *ngFor='let phone of aboutInfo.phones'>{{phone}}</div>
+                          <div class='col-12' *ngFor='let phone of aboutInfo.phones'>{{phone.phone}}</div>
                         </div>
                       </div>
                     </li>
@@ -58,7 +58,7 @@
                       <div class='row row-cols-2'>
                         <div class='col-6'>Emails:</div>
                         <div class='row' row-cols-1>
-                          <div class='col-12' *ngFor="let email of aboutInfo.emails">{{email}}</div>
+                          <div class='col-12' *ngFor="let email of aboutInfo.emails">{{email.email}}</div>
                         </div>
                       </div>
                     </li>
@@ -99,7 +99,7 @@
             <div class='col'>
               <h5 class='mt-3'>Education</h5>
               <div class='card m-1 p-2'>
-                <div class='card shadow m-1 p-2' *ngFor='let ed of aboutInfo.education'>
+                <div class='card shadow m-1 p-2' *ngFor='let ed of aboutInfo.educations'>
                   Title:<h6>{{ed.title}}</h6>
                   Institution: <h6>{{ed.school}}</h6>
                   Grade:<h6>{{ed.grade}}/{{ed.gradeBase}}</h6>
@@ -109,7 +109,7 @@
             <div class='col'>
               <h5 class='mt-3'>Top Certificates</h5>
               <div class='card m-1 p-2'>
-                <div class='card shadow m-1 p-2' *ngFor='let certificate of aboutInfo.top_certificates'>
+                <div class='card shadow m-1 p-2' *ngFor='let certificate of topCertificates'>
                   Title:<h6>{{certificate.title}}</h6>
                   Issued By:<h6>{{certificate.school}}</h6>
                 </div>

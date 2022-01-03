@@ -8,19 +8,25 @@ export interface Certificate {
     title: string;
     school: string;
 }
+interface Phone{
+    phone: string;
+}
+interface Email{
+    email: string;
+}
 export interface AboutInfo {
     name: string;
     age: number;
     nationality: string;
     residence: string;
-    short_description: string;
+    shortDescription: string;
     earlyLife: string;
     workHistory: string;
     passionAndGoal: string;
-    education: Array<Education>;
-    top_certificates: Array<Certificate>;
-    phones: Array<string>;
-    emails: Array<string>;
+    educations: Array<Education>;
+    topCertificates: Array<Certificate>;
+    phones: Array<Phone>;
+    emails: Array<Email>;
     github: string;
     linkedIn: string;
     calendy: string;
