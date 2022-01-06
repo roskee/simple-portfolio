@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <div class='form-group'>
+                                            <div class='form-group mt-1'>
                                                 <label for='cert-title' class='form-label'>Title</label>
                                                 <input formControlName="certTitle" id='cert-title' type="text"
                                                     placeholder="Title"
@@ -58,18 +58,25 @@
                                                 <div *ngIf="certTitle!.invalid" class="text-danger">This field is
                                                     required</div>
                                             </div>
-                                            <div class='form-group'>
+                                            <div class='form-group mt-1'>
                                                 <label for='cert-date' class='form-label'>Date</label>
                                                 <input formControlName="certDate" id='cert-date' type="date"
                                                     class="form-control {{certDate!.invalid?'is-invalid':'is-valid'}}">
                                                 <div *ngIf="certDate!.invalid" class="text-danger">This field is
                                                     required</div>
                                             </div>
-                                            <div class='form-group'>
+                                            <div class='form-group mt-1'>
                                                 <label for='cert-image' class='form-label'>Image</label>
                                                 <input formControlName="certImage" type="file" id='cert-image'
                                                     class="form-control {{certImage!.invalid?'is-invalid':'is-valid'}}">
                                                 <div *ngIf="certImage!.invalid" class="text-danger">This field is
+                                                    required</div>
+                                            </div>
+                                            <div class='form-group mt-1'>
+                                                <label for='cert-school' class='form-label'>School</label>
+                                                <input formControlName="certSchool" type="text" id='cert-school'
+                                                    class="form-control {{certSchool!.invalid?'is-invalid':'is-valid'}}">
+                                                <div *ngIf="certSchool!.invalid" class="text-danger">This field is
                                                     required</div>
                                             </div>
                                         </div>

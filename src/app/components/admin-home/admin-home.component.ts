@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AboutService } from 'src/app/services/about.service';
 import { OpinionService } from 'src/app/services/opinion.service';
 import { ProjectsService } from 'src/app/services/projects.service';
+import { AboutInfo } from 'src/interfaces/aboutInfo';
 import { Opinion } from 'src/interfaces/opinion';
 import { Project } from 'src/interfaces/project';
 import { Skill } from 'src/interfaces/skill';
@@ -19,7 +20,8 @@ export class AdminHomeComponent implements OnInit {
   skills: Skill[] = [];
   opinion: Opinion = {} as Opinion;
   opinions: Opinion[] = [];
-  currentRoute: string = 'addProject';
+  currentRoute: string = 'about';
+  aboutInfo: AboutInfo = {} as AboutInfo;
   constructor(
     private projectsService: ProjectsService,
     private skillService: AboutService,
@@ -29,7 +31,7 @@ export class AdminHomeComponent implements OnInit {
     this.projectsService.getProjects().subscribe((projects) => this.projects = projects);
     this.skillService.getSkills().subscribe((skills) => this.skills = skills);
     this.opinionService.getOpinions().subscribe((opinions) => this.opinions = opinions);
-
+    this.skillService.getAboutInfo().subscribe((aboutInfo) => (this.aboutInfo = aboutInfo));
   }
   routeTo(route: string, project?: Project): void {
     this.currentRoute = route;

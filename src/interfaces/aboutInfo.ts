@@ -1,17 +1,15 @@
+import { Certificate } from "./skill";
+
 export interface Education {
     title: string;
     school: string;
     grade: number;
     gradeBase: number;
 }
-export interface Certificate {
-    title: string;
-    school: string;
-}
-interface Phone{
+export interface Phone {
     phone: string;
 }
-interface Email{
+export interface Email {
     email: string;
 }
 export interface AboutInfo {

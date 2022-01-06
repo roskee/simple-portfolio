@@ -18,7 +18,8 @@ export class AddSkillFormComponent implements OnInit {
     this.addedCertificates.push({
       title: this.certTitle!.value,
       date: this.certDate!.value,
-      image: this.certImage!.value
+      image: this.certImage!.value,
+      school: this.certSchool!.value,
     });
     this.validate();
   }
@@ -63,6 +64,10 @@ export class AddSkillFormComponent implements OnInit {
       ]),
       certImage: new FormControl(this.certificate.image, [
         Validators.required
+      ]),
+      certSchool: new FormControl(this.certificate.school, [
+        Validators.required,
+        Validators.maxLength(40)
       ])
     })
   }
@@ -85,4 +90,5 @@ export class AddSkillFormComponent implements OnInit {
   get certTitle() { return this.certificateForm.get('certTitle') }
   get certDate() { return this.certificateForm.get('certDate') }
   get certImage() { return this.certificateForm.get('certImage') }
+  get certSchool() { return this.certificateForm.get('certSchool') }
 }

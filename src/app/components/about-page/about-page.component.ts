@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AboutInfo, Certificate } from 'src/interfaces/aboutInfo';
-import { Skill } from 'src/interfaces/skill';
+import { AboutInfo } from 'src/interfaces/aboutInfo';
+import { Skill, Certificate } from 'src/interfaces/skill';
 import { AboutService } from '../../services/about.service';
 @Component({
   selector: 'app-about-page',
@@ -15,6 +15,13 @@ export class AboutPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.aboutService.getAboutInfo().subscribe((aboutInfo) => (this.aboutInfo = aboutInfo));
-    this.aboutService.getTopCertificates().subscribe((topCertificates)=>(this.topCertificates = topCertificates));
+    //TODO: Temporary
+    this.aboutService.getSkills().subscribe((skills) => {
+      for (let skill of skills) {
+        for (let certi of skill.certificates)
+          if (certi.topCertificate)
+            this.topCertificates.push(certi);
+      }
+    });
   }
 }

@@ -8,12 +8,20 @@
             "playstore": "play.google.com/random-thoughts",
             "video": "randomThoughts/videos/intro.mp4",
             "madeWith": [
-               {"tool": "Flutter"},
-                {"tool":"Firebase"}
+                {
+                    "tool": "Flutter"
+                },
+                {
+                    "tool": "Firebase"
+                }
             ],
             "platforms": [
-                {"platform":"Android"},
-                {"platform":"iOS"}
+                {
+                    "platform": "Android"
+                },
+                {
+                    "platform": "iOS"
+                }
             ],
             "images": [
                 {
@@ -32,12 +40,20 @@
             "playstore": "play.google.com/ethio-betting-tips",
             "video": "localhost/static/videos/ethio-betting-tips",
             "madeWith": [
-                {"tool":"Flutter"},
-                {"tool":"Firebase"}
+                {
+                    "tool": "Flutter"
+                },
+                {
+                    "tool": "Firebase"
+                }
             ],
             "platforms": [
-                {"platform":"Android"},
-                {"platform":"iOS"}
+                {
+                    "platform": "Android"
+                },
+                {
+                    "platform": "iOS"
+                }
             ],
             "images": [
                 {
@@ -56,12 +72,20 @@
             "playstore": "play.google.com/detective",
             "video": "localhost/static/videos/detective",
             "madeWith": [
-                {"tool":"Flutter"},
-                {"tool":"Firebase"}
+                {
+                    "tool": "Flutter"
+                },
+                {
+                    "tool": "Firebase"
+                }
             ],
             "platforms": [
-                {"platform":"Android"},
-                {"platform":"iOS"}
+                {
+                    "platform": "Android"
+                },
+                {
+                    "platform": "iOS"
+                }
             ],
             "images": [
                 {
@@ -80,16 +104,21 @@
             "description": "I have created more than 5 mobile apps",
             "certificates": [
                 {
+                    "id": 1,
                     "title": "LinkedIn",
                     "date": "2020-12-12",
-                    "image": "randomThoughts/images/home.jpg"
+                    "image": "randomThoughts/images/home.jpg",
+                    "school": "LinkedIn",
+                    "topCertificate": true
                 },
                 {
+                    "id": 2,
                     "title": "Udemy",
                     "date": "2020-12-12",
                     "image": "randomThoughts/images/home.jpg"
                 },
                 {
+                    "id": 3,
                     "title": "Google",
                     "date": "2020-12-12",
                     "image": "randomThoughts/images/home.jpg"
@@ -108,14 +137,18 @@
             "description": "This was my first programming language",
             "certificates": [
                 {
+                    "id": 4,
                     "title": "LinkedIn",
                     "date": "2020-12-12",
                     "image": "randomThoughts/images/home.jpg"
                 },
                 {
+                    "id": 5,
                     "title": "Udemy",
                     "date": "2020-12-12",
-                    "image": "randomThoughts/images/home.jpg"
+                    "image": "randomThoughts/images/home.jpg",
+                    "school": "Udemy",
+                    "topCertificate": true
                 }
             ]
         },
@@ -125,33 +158,40 @@
             "description": "I can say this is my Native programming language",
             "certificates": [
                 {
+                    "id": 6,
                     "title": "LinkedIn",
                     "date": "2020-12-12",
-                    "image": "randomThoughts/images/home.jpg"
+                    "image": "randomThoughts/images/home.jpg",
+                    "school": "LinkedIn",
+                    "topCertificate": true
                 },
                 {
+                    "id": 7,
                     "title": "Udemy",
                     "date": "2020-12-12",
                     "image": "randomThoughts/images/home.jpg"
                 },
                 {
+                    "id": 8,
                     "title": "Google",
                     "date": "2020-12-12",
-                    "image": "randomThoughts/images/home.jpg"
+                    "image": "randomThoughts/images/home.jpg",
+                    "school": "Google",
+                    "topCertificate": true
                 }
             ]
         }
     ],
     "about": {
         "name": "Kirubel Adamu",
-        "age": "23",
+        "age": 23,
         "nationality": "Ethiopian",
         "residence": "Addis Ababa",
-        "short_description": "I am Kirubel Adamu. I am a Junior Software Engineer recently graduated from Addis Ababa Science and Technology University. I am passionate about developing mobile apps to simplify user's daily life and taking part in the gaming industry to tailor popular video games to the culture I grew upon. Currently I am working as a Mobile Application Developer at SafariCom.et. I am working with flutter and Native Java to develop, maintain and test various applications my company currently has deployed",
+        "shortDescription": "I am Kirubel Adamu. I am a Junior Software Engineer recently graduated from Addis Ababa Science and Technology University. I am passionate about developing mobile apps to simplify user's daily life and taking part in the gaming industry to tailor popular video games to the culture I grew upon. Currently I am working as a Mobile Application Developer at SafariCom.et. I am working with flutter and Native Java to develop, maintain and test various applications my company currently has deployed",
         "earlyLife": "My history Extended",
         "workHistory": "My Work History",
         "passionAndGoal": "My passiona and future goal",
-        "education": [
+        "educations": [
             {
                 "title": "BSc. Software Engineerig",
                 "school": "Addis Ababa Science and Technology University",
@@ -170,12 +210,20 @@
             }
         ],
         "phones": [
-            "+251918410746",
-            "+251967493716"
+            {
+                "phone": "+251918410746"
+            },
+            {
+                "phone": "+251967493716"
+            }
         ],
         "emails": [
-            "kirubeladamu@gmail.com",
-            "kirub33@yahoo.com"
+            {
+                "email": "kirubeladamu@gmail.com"
+            },
+            {
+                "email": "kirub33@yahoo.com"
+            }
         ],
         "github": "www.github.com/roskee",
         "linkedIn": "www.linkedin.com/kirubel-adamu",
@@ -209,19 +257,41 @@
             "content": "Yes, This is the most annoying question almost every one of us face when we finish the basic programming courses like C++ and Java. Should I learn Web, Mobile, Desktop, AI, Database, Security, Gaming, Design, et cetera the choices are limitless. Even if you do decide on one of this, the next, even harder, question is the choice of languages, frameworks, libraries and data stores to start your journey. React, Angular, Native Javascript, ASP.Net, Vue, and many annoyingly many frameworks just for frontend web development. Java, NodeJS, PHP, SpringBoot, Laravel, C#, C++, DJango, and many languages to work on your backend. Ufff!!! This is becoming more and more complex without any hint of a solution. In conclusion, my experience with this was that I decided to work on the field I was really interested on, which was mobile app development, and then I chased frameworks and languages that big corporates currently use. The reason for this was that languages and frameworks that big companies like microsoft and google use don't change that much. This gives me the advantage of not wasting my time on something that is going to be obselute in the next few years or months."
         }
     ],
-    "platforms":[
-        {"platform":"Android"},
-        {"platform":"iOS"},
-        {"platform":"Windows"},
-        {"platform":"MacOS"},
-        {"platform":"Linux"}
+    "platforms": [
+        {
+            "platform": "Android"
+        },
+        {
+            "platform": "iOS"
+        },
+        {
+            "platform": "Windows"
+        },
+        {
+            "platform": "MacOS"
+        },
+        {
+            "platform": "Linux"
+        }
     ],
-    "tools":[
-        {"tool":"Flutter"},
-        {"tool":"Firebase"},
-        {"tool":"NodeJS"},
-        {"tool":"Spring Boot"},
-        {"tool":"MySQL"},
-        {"tool":"Angular"}
+    "tools": [
+        {
+            "tool": "Flutter"
+        },
+        {
+            "tool": "Firebase"
+        },
+        {
+            "tool": "NodeJS"
+        },
+        {
+            "tool": "Spring Boot"
+        },
+        {
+            "tool": "MySQL"
+        },
+        {
+            "tool": "Angular"
+        }
     ]
 }

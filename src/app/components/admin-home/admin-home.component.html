@@ -124,7 +124,7 @@
                         <h6>Editing Opinion</h6>
                         <app-add-opinion-form [opinion]="opinion"></app-add-opinion-form>
                     </div>
-                    <app-about-form *ngSwitchCase="'about'"></app-about-form>
+                    <app-about-form [aboutInfo]="aboutInfo" *ngSwitchCase="'about'"></app-about-form>
                 </div>
             </div>
         </div>

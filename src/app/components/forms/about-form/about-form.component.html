@@ -1,1 +1,159 @@
-<p>about-form works!</p>
+<div class=".container">
+    <h6>Your About Information</h6>
+    <form class="form" [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
+        <div class='row mt-2'>
+            <div class='form-group col-lg-3'>
+                <label for='name' class='form-label'>Name</label>
+                <input formControlName="name" id='name' type="text"
+                    class="form-control {{name!.invalid?'is-invalid':'is-valid'}}">
+                <div *ngIf="name!.invalid" class='text-danger'>Your name is required</div>
+            </div>
+            <div class='form-group col-lg-3'>
+                <label for='age' class='form-label'>Age</label>
+                <input formControlName="age" id='age' type="number"
+                    class="form-control {{age!.invalid?'is-invalid':'is-valid'}}">
+                <div *ngIf="age!.invalid" class="text-danger">Your age is required</div>
+            </div>
+            <div class='form-group col-lg-3'>
+                <label for='nationality' class='form-label'>Nationality</label>
+                <input formControlName="nationality" id='nationality' type="text"
+                    class="form-control {{nationality!.invalid?'is-invalid':'is-valid'}}">
+                <div *ngIf="nationality!.invalid" class="text-danger">Your Nationality is required</div>
+            </div>
+            <div class='form-group col-lg-3'>
+                <label for='residence' class='form-label'>Residence</label>
+                <input formControlName="residence" id='residence' type="text"
+                    class="form-control {{residence!.invalid?'is-invalid':'is-valid'}}">
+                <div *ngIf="residence!.invalid" class="text-danger">Your Residence is required</div>
+            </div>
+        </div>
+        <div class='row mt-2'>
+            <div class='form-group col-lg-4'>
+                <label for='github' class='form-label'>GitHub Profile</label>
+                <input formControlName="github" id='github' type="text"
+                    class="form-control {{github!.invalid?'is-invalid':'is-valid'}}">
+                <div *ngIf="github!.invalid" class='text-danger'>Your Github is required</div>
+            </div>
+            <div class='form-group col-lg-4'>
+                <label for='linkedin' class='form-label'>LinkedIn Profile</label>
+                <input formControlName="linkedIn" id='linkedin' type="text"
+                    class="form-control {{linkedIn!.invalid?'is-invalid':'is-valid'}}">
+                <div *ngIf="linkedIn!.invalid" class="text-danger">Your LinkedIn is required</div>
+            </div>
+            <div class='form-group col-lg-4'>
+                <label for='calendly' class='form-label'>Calendly Link</label>
+                <input formControlName="calendly" id='calendly' type="text"
+                    class="form-control {{calendly!.invalid?'is-invalid':'is-valid'}}">
+                <div *ngIf="calendly!.invalid" class="text-danger">Your Calendly is required</div>
+            </div>
+        </div>
+        <div class='row mt-2'>
+            <div class='form-group col-lg-6'>
+                <label for='description' class='form-label'>Bio</label>
+                <textarea formControlName="description" id='bio' type="text"
+                    class="form-control {{description!.invalid?'is-invalid':'is-valid'}}" rows='5'></textarea>
+                <div *ngIf="description!.invalid" class='text-danger'>Your Bio is required</div>
+            </div>
+            <div class='form-group col-lg-6'>
+                <label for='ealrylife' class='form-label'>Early Life</label>
+                <textarea formControlName="earlyLife" id='earlylife' type="text"
+                    class="form-control {{earlyLife!.invalid?'is-invalid':'is-valid'}}" rows='5'></textarea>
+                <div *ngIf="earlyLife!.invalid" class="text-danger">Your Early Life story is required</div>
+            </div>
+
+        </div>
+        <div class='row mt-2'>
+            <div class='form-group col-lg-6'>
+                <label for='workhistory' class='form-label'>Work History</label>
+                <textarea formControlName="workHistory" id='workhistory' type="text"
+                    class="form-control {{workHistory!.invalid?'is-invalid':'is-valid'}}" rows='5'></textarea>
+                <div *ngIf="workHistory!.invalid" class='text-danger'>Your Work History is required</div>
+            </div>
+            <div class='form-group col-lg-6'>
+                <label for='passion' class='form-label'>Passion and Future Goals</label>
+                <textarea formControlName="passion" id='passion' type="text"
+                    class="form-control {{passion!.invalid?'is-invalid':'is-valid'}}" rows='5'></textarea>
+                <div *ngIf="passion!.invalid" class="text-danger">Your Passion and Goals are required</div>
+            </div>
+        </div>
+        <div class='row mt-2'>
+            <div class="form-group col-lg-4 mt-3">
+                <label for='certificates' class='form-label'>Top Certificates</label>
+                <div class='d-grid'>
+                    <button style="text-align: left;"
+                        class="btn {{certificatesValidate?'btn-outline-success':'btn-outline-danger'}} dropdown-toggle"
+                        type="button" id="certificates" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                        aria-expanded="false">
+                        <span class='badge bg-primary m-1'
+                            *ngFor="let certificate of topCertificates">{{certificate.title}}</span>
+                    </button>
+                    <ul class="dropdown-menu col-4" aria-labelledby="dropdownMenuClickableInside">
+                        <div *ngFor="let certificate of certificates" (click)="selectCertificate(certificate)"
+                            class="btn {{selectedCertificateContains(certificate)? 'btn-success' : 'btn-outline-success'}} m-2">
+                            <h6>{{certificate.title}}</h6> - <i>{{certificate.school}}</i>
+                        </div>
+                    </ul>
+                </div>
+                <div *ngIf="!certificatesValidate" class="text-warning">Having a certificate is recommended</div>
+            </div>
+            <div class="form-group col-lg-4 mt-2">
+                <label for="phones" class="form-label mt-2 mb-2">
+                    Phones
+
+                </label>
+                <div class='.container'>
+                    <div class='row'>
+                        <div class='col-lg-9'>
+                            <input formControlName='phone' type='tel'
+                                class="form-control {{phone!.invalid?'is-invalid':'is-valid'}}">
+                        </div>
+                        <div class='col-lg-3 mb-1 text-end'><button type='button' [disabled]="phone!.invalid"
+                                class='btn btn-outline-success' (click)="insertPhone()">Add</button></div>
+                    </div>
+                </div>
+                <div *ngIf="phone!.invalid" class="text-danger mb-2">Invalid Phone</div>
+                <div class="card {{phonesValidate?'border-success':'border-danger'}}">
+                    <div id="phones" class=".container" style="height: 70px;overflow-y: auto;">
+                        <span class="badge bg-success m-2" *ngFor="let phone of phones">
+                            {{phone.phone}}<button (click)="removePhone(phone)"
+                                class="btn btn-danger badge ms-1">*</button>
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="!phonesValidate" class="text-danger">At least one phone is required</div>
+            </div>
+            <div class="form-group col-lg-4 mt-2">
+                <label for="emails" class="form-label mt-2 mb-2">
+                    Emails
+                </label>
+                <div class='.container'>
+                    <div class='row'>
+                        <div class='col-lg-9'>
+                            <input formControlName='email' type='tel'
+                                class="form-control {{email!.invalid?'is-invalid':'is-valid'}}">
+                        </div>
+                        <div class='col-lg-3 mb-1 text-end'><button [disabled]="email!.invalid" type='button'
+                                class='btn btn-outline-success' (click)="insertEmail()">Add</button></div>
+                    </div>
+                </div>
+                <div *ngIf="email!.invalid" class="text-danger mb-2">Invalid Email</div>
+                <div class="card {{emailsValidate?'border-success':'border-danger'}}">
+                    <div id="emails" class=".container" style="height: 70px;overflow-y: auto;">
+                        <span class="badge bg-success m-2" *ngFor="let email of emails">
+                            {{email.email}}<button (click)="removeEmail(email)"
+                                class="btn btn-danger badge ms-1">*</button>
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="!emailsValidate" class="text-danger">At least one Email is required</div>
+            </div>
+        </div>
+        <div class='row mt-2'>
+            <div class='col-12 text-end'>
+                <button [disabled]="aboutForm!.invalid || !emailsValidate || !phonesValidate" type="submit"
+                    class="btn btn-outline-success">Update About
+                    Info</button>
+            </div>
+        </div>
+    </form>
+</div>
