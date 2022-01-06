@@ -1,104 +1,108 @@
 <div class='.container'>
-    <form class='form' [formGroup]='form'>
-        <div class='form-group'>
+    <form class='form' [formGroup]='form' (ngSubmit)="onSubmitForm()">
+        <div class='form-group .container'>
             <div class='row'>
-                <div class='col-4'>
+                <div class='col-lg-4 mt-2'>
                     <label for='title' class='form-label'>Title</label>
                     <input formControlName='title' type='text'
                         class="form-control {{(title!.invalid) ? 'is-invalid' : 'is-valid'}}"
                         placeholder="Project title">
                     <div *ngIf="title!.errors?.['required']" class='text-danger'>This field is required</div>
-                    <div *ngIf="title!.errors?.['maxlength']" class='text-danger'>Title should be less than 50 characters long!</div>
+                    <div *ngIf="title!.errors?.['maxlength']" class='text-danger'>Title should be less than 50
+                        characters long!</div>
                 </div>
-                <div class='col-4'>
+                <div class='col-lg-4 mt-2'>
                     <label for='github' class='form-label'>GitHub link</label>
                     <input formControlName='github' id='github'
-                        class="form-control {{(github!.invalid) ? 'is-invalid' : 'is-valid'}}" placeholder="GitHub link">
+                        class="form-control {{(github!.invalid) ? 'is-invalid' : 'is-valid'}}"
+                        placeholder="GitHub link">
                     <div *ngIf="github!.errors?.['required']" class='text-danger'>This field is required</div>
                     <div *ngIf="github!.errors?.['pattern']" class='text-danger'>Invalid address</div>
                 </div>
-                <div class='col-4'>
+                <div class='col-lg-4 mt-2'>
                     <label for='playstore' class='form-label'>Store link</label>
                     <input formControlName='playStore' id='playstore'
-                    class="form-control {{playStore!.invalid? 'is-invalid' : 'is-valid'}}"
-                        placeholder="Store link">
+                        class="form-control {{playStore!.invalid? 'is-invalid' : 'is-valid'}}" placeholder="Store link">
                     <div *ngIf="playStore!.errors?.['required']" class='text-danger'>This field is required</div>
                 </div>
             </div>
-            <div class='row mt-1'>
-                <div class='col-4'>
-                    <label for='description' class='form-label'>Title</label>
+            <div class='row mt-2'>
+                <div class='col-lg-4 mt-2'>
+                    <label for='description' class='form-label'>Descritpion</label>
                     <textarea formControlName="description" maxlength="150" id='description' type='textarea'
-                        class="form-control {{description!.invalid?'is-invalid':'is-valid'}}" placeholder="Project description"></textarea>
+                        class="form-control {{description!.invalid?'is-invalid':'is-valid'}}"
+                        placeholder="Project description"></textarea>
                     <div *ngIf="description!.errors?.['required']" class='text-danger'>This field is required</div>
                     <div *ngIf="description!.errors?.['maxlength']" class='text-danger'>description should be less than
                         150 characters</div>
                 </div>
-                <div class='col-4'>
+                <div class='col-lg-4 mt-2'>
                     <label for='tool' class='form-label'>Tools Used</label>
                     <div class='d-grid'>
-                        <button style="text-align: left;" class="btn {{toolsValidate?'btn-outline-success':'btn-outline-danger'}} dropdown-toggle" type="button"
-                            id="tools" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        <button style="text-align: left;"
+                            class="btn {{toolsValidate?'btn-outline-success':'btn-outline-danger'}} dropdown-toggle"
+                            type="button" id="tools" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                            aria-expanded="false">
                             <span class='badge bg-primary m-1' *ngFor="let tool of selectedTools">{{tool.tool}}</span>
                         </button>
-                        <ul 
-                        class="dropdown-menu col-4" aria-labelledby="dropdownMenuClickableInside">
-                            
-                                <div
-                                *ngFor="let tool of tools" (click) ="selectTool(tool)"
-                                class="btn {{selectedToolContains(tool)? 'btn-success' : 'btn-outline-success'}} m-2">{{tool.tool}}</div>
-                                
-                           
+                        <ul class="dropdown-menu col-4" aria-labelledby="dropdownMenuClickableInside">
+
+                            <div *ngFor="let tool of tools" (click)="selectTool(tool)"
+                                class="btn {{selectedToolContains(tool)? 'btn-success' : 'btn-outline-success'}} m-2">
+                                {{tool.tool}}</div>
+
+
                         </ul>
                     </div>
-                    <div *ngIf="!toolsValidate"
-                    class='text-danger'>You must select at least one tool!</div>
+                    <div *ngIf="!toolsValidate" class='text-danger'>You must select at least one tool!</div>
                 </div>
-                <div class='col-4'>
+                <div class='col-lg-4 mt-2'>
                     <label for='platform' class='form-label'>Supported Platforms</label>
                     <div class='d-grid'>
-                        <button style="text-align: left;" class="btn {{platformsValidate?'btn-outline-success':'btn-outline-danger'}} dropdown-toggle" type="button"
-                            id="platforms" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                            <span class='badge bg-primary m-1' *ngFor="let platform of selectedPlatforms">{{platform.platform}}</span>
+                        <button style="text-align: left;"
+                            class="btn {{platformsValidate?'btn-outline-success':'btn-outline-danger'}} dropdown-toggle"
+                            type="button" id="platforms" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                            aria-expanded="false">
+                            <span class='badge bg-primary m-1'
+                                *ngFor="let platform of selectedPlatforms">{{platform.platform}}</span>
                         </button>
                         <ul class="dropdown-menu col-4" aria-labelledby="dropdownMenuClickableInside">
-                            <div
-                                *ngFor="let platform of platforms" (click) ="selectPlatform(platform)"
-                                class="btn {{selectedPlatformContains(platform)? 'btn-success' : 'btn-outline-success'}} m-2">{{platform.platform}}</div>
+                            <div *ngFor="let platform of platforms" (click)="selectPlatform(platform)"
+                                class="btn {{selectedPlatformContains(platform)? 'btn-success' : 'btn-outline-success'}} m-2">
+                                {{platform.platform}}</div>
                         </ul>
                     </div>
-                    <div *ngIf="!platformsValidate"
-                    class='text-danger'>You must select at lease one tool!</div>
+                    <div *ngIf="!platformsValidate" class='text-danger'>You must select at lease one tool!</div>
                 </div>
             </div>
-            <div class='row mt-1'>
-                <div class='col-4'>
+            <div class='row mt-2'>
+                <div class='col-lg-4 mt-2'>
                     <label for="video" class='form-label'>Sample Video</label>
-                    <input formControlName="video"
-                    id='video' type='file' class="form-control {{video!.invalid?'is-invalid':'is-valid'}}">
-                    <div *ngIf="video!.invalid"
-                    class='text-danger'>This field is required</div>
+                    <input formControlName="video" id='video' type='file'
+                        class="form-control {{video!.invalid?'is-invalid':'is-valid'}}">
+                    <div *ngIf="video!.invalid" class='text-danger'>This field is required</div>
                 </div>
-                <div class='col-4'>
+                <div class='col-lg-4 mt-2'>
                     <label for='images' class='form-label'>Project Images</label>
-                    <input formControlName="images"
-                    id='images' type='file' class="form-control {{images!.invalid?'is-invalid':'is-valid'}}" multiple>
-                    <div *ngIf="images!.invalid"
-                    class='text-danger'>This field is required</div>
+                    <input formControlName="images" (change)="imagesValueChanged($event)" id='images' type='file'
+                        class="form-control {{images!.invalid?'is-invalid':'is-valid'}}" multiple>
+                    <div *ngIf="images!.invalid" class='text-danger'>This field is required</div>
                 </div>
-                <div class='col-4'>
+                <div class='col-lg-4 mt-2'>
 
                     <div class='card p-3 border-success'>
                         Mark this project as 'Featured'
-                        <input type='checkbox' class='form-check-input is-valid'>
+                        <input formControlName="featured" type='checkbox' class='form-check-input is-valid'>
                     </div>
 
                 </div>
             </div>
-            <div class='col-12 text-end'>
-                <button [disabled]='form.invalid || !toolsValidate || !platformsValidate' type='submit' class='btn btn-outline-success'>Create and Save
+            <div class='col-12 mt-2 text-end'>
+                <button [disabled]='form.invalid || !toolsValidate || !platformsValidate' type='submit'
+                    class='btn btn-outline-success'>Create and Save
                     Project'</button>
-                <div *ngIf = "form.invalid || !toolsValidate || !platformsValidate" class='text-danger'>Please complete all required fields</div>
+                <div *ngIf="form.invalid || !toolsValidate || !platformsValidate" class='text-danger'>Please complete
+                    all required fields</div>
             </div>
         </div>
     </form>

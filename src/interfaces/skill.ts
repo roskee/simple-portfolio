@@ -1,4 +1,4 @@
-interface Certificate {
+export interface Certificate {
     title: string;
     date: Date;
     image: string;

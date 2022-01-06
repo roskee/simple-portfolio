@@ -1,1 +1,106 @@
-<p>add-skill-form works!</p>
+<div class='.container'>
+    <form class='form' [formGroup]="form" (ngSubmit)="onSubmitForm()">
+        <div class='row'>
+            <div class='col-lg-6 mt-2'>
+                <div class='.container form-group'>
+                    <label for="title" class='form-label'>Title</label>
+                    <input id="title" formControlName='title'
+                        class="form-control {{title!.invalid?'is-invalid':'is-valid'}}" type="text" placeholder="Title">
+                    <div *ngIf="title!.invalid" class='text-danger'>This field is required</div>
+                </div>
+            </div>
+            <div class='col-lg-6 mt-2'>
+                <div class='.container form-group'>
+                    <label for="since" class='form-label'>Since</label>
+                    <input id="since" formControlName="since"
+                        class="form-control {{since!.invalid?'is-invalid':'is-valid'}}" type="date">
+                    <div *ngIf="since!.invalid" class='text-danger'>This field is required</div>
+                </div>
+            </div>
+        </div>
+        <div class='row mt-2'>
+            <div class='col-lg-6'>
+                <div class='.container form-group'>
+                    <label for='description' class='form-label'>Description</label>
+                    <textarea formControlName="description" id="description"
+                        class="form-control {{description!.invalid?'is-invalid':'is-valid'}}"
+                        placeholder="Description"></textarea>
+                    <div *ngIf="description!.invalid" class='text-danger'>This field is required</div>
+                </div>
+            </div>
+            <div class='col-lg-6 mt-2'>
+                <div class='.container form-group mt-2'>
+                    <label for='certificates' class='row form-label w-100'>
+                        <div class='col-10'>Certificates</div>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="col-2 btn btn-outline-success" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Add
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <form class='form' [formGroup]="certificateForm" (ngSubmit)="onSubmitCertificateForm()">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Add Certificate</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <div class='form-group'>
+                                                <label for='cert-title' class='form-label'>Title</label>
+                                                <input formControlName="certTitle" id='cert-title' type="text"
+                                                    placeholder="Title"
+                                                    class="form-control {{certTitle!.invalid?'is-invalid':'is-valid'}}">
+                                                <div *ngIf="certTitle!.invalid" class="text-danger">This field is
+                                                    required</div>
+                                            </div>
+                                            <div class='form-group'>
+                                                <label for='cert-date' class='form-label'>Date</label>
+                                                <input formControlName="certDate" id='cert-date' type="date"
+                                                    class="form-control {{certDate!.invalid?'is-invalid':'is-valid'}}">
+                                                <div *ngIf="certDate!.invalid" class="text-danger">This field is
+                                                    required</div>
+                                            </div>
+                                            <div class='form-group'>
+                                                <label for='cert-image' class='form-label'>Image</label>
+                                                <input formControlName="certImage" type="file" id='cert-image'
+                                                    class="form-control {{certImage!.invalid?'is-invalid':'is-valid'}}">
+                                                <div *ngIf="certImage!.invalid" class="text-danger">This field is
+                                                    required</div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button [disabled]="certificateForm!.invalid" type="submit"
+                                                class="btn btn-outline-success" data-bs-dismiss="modal">Save and
+                                                Close</button>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="card {{certificatesValidate?'border-warning':'border-success'}}">
+                        <div class='.container' style="height: 100px;overflow-y: auto">
+                            <span *ngFor="let certificate of addedCertificates"
+                                class='badge bg-success m-2 p-2'>{{certificate.title}}</span>
+
+                        </div>
+                    </div>
+                    <div *ngIf="certificatesValidate" class='text-warning'>It could have been better if you had
+                        certificates:(</div>
+                </div>
+            </div>
+        </div>
+        <div class='row mt-2'>
+            <div class='col-12 mt-2 text-end'>
+                <button [disabled]="form!.invalid" type="submit" class='btn btn-outline-success'>Create and
+                    Save Skill</button>
+            </div>
+        </div>
+    </form>
+</div>

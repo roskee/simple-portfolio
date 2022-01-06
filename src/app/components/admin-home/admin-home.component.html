@@ -3,13 +3,17 @@
         <div class='col-2'>
             <div class=".container h-100">
                 <div class="d-grid gap-2">
-                    <button style="text-align: left;" class="btn {{currentRoute=='project'? 'btn-primary':'btn-outline-primary'}}" type="button"
+                    <button style="text-align: left;"
+                        class="btn {{currentRoute=='project'? 'btn-primary':'btn-outline-primary'}}" type="button"
                         (click)="routeTo('project')">Manage Projects</button>
-                    <button style="text-align: left;" class="btn {{currentRoute=='skill'? 'btn-primary':'btn-outline-primary'}}" type="button"
+                    <button style="text-align: left;"
+                        class="btn {{currentRoute=='skill'? 'btn-primary':'btn-outline-primary'}}" type="button"
                         (click)="routeTo('skill')">Manage Skills</button>
-                    <button style="text-align: left;" class="btn {{currentRoute=='opinion'? 'btn-primary':'btn-outline-primary'}}" type="button"
+                    <button style="text-align: left;"
+                        class="btn {{currentRoute=='opinion'? 'btn-primary':'btn-outline-primary'}}" type="button"
                         (click)="routeTo('opinion')">Manage Opinions</button>
-                    <button style="text-align: left;" class="btn {{currentRoute=='about'? 'btn-primary':'btn-outline-primary'}}" type="button"
+                    <button style="text-align: left;"
+                        class="btn {{currentRoute=='about'? 'btn-primary':'btn-outline-primary'}}" type="button"
                         (click)="routeTo('about')">Manage About</button>
                 </div>
             </div>
@@ -50,7 +54,39 @@
                         <h6>Editing Project</h6>
                         <app-add-project-form [project]="project"></app-add-project-form>
                     </div>
-                    <app-add-skill-form *ngSwitchCase="'skill'"></app-add-skill-form>
+                    <div *ngSwitchCase="'skill'">
+                        <div class=".container">
+                            <h6>Your Skills</h6>
+                            <ul class="list-group">
+                                <li *ngFor="let skill of skills" class="list-group-item">
+
+                                    <div class='card-header'>{{skill.title}}</div>
+                                    <div class='card-body'>
+                                        <div class='row'>
+                                            <div class='col-11'>{{skill.description}}</div>
+                                            <!-- <div class='col-1 text-end'>
+                                                <div class='btn btn-outline-primary'>View</div>
+                                            </div> -->
+                                            <div class='col-1 text-end'>
+                                                <div class='btn btn-outline-primary'
+                                                    (click)="routeToSkill('addSkill',skill)">Edit</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li class="list-group-item text-end">
+                                    <div class='btn btn-outline-primary mt-2' (click)="routeToSkill('addSkill')">Add New
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="'addSkill'">
+                        <h6>Editing Skill</h6>
+                        <app-add-skill-form [skill]="skill"></app-add-skill-form>
+                    </div>
                     <app-add-opinion-form *ngSwitchCase="'opinion'"></app-add-opinion-form>
                     <app-about-form *ngSwitchCase="'about'"></app-about-form>
                 </div>
