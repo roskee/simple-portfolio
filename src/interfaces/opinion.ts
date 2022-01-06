@@ -1,5 +1,5 @@
 export interface Opinion {
-    id: number;
+    id?: number;
     title: string;
     date: Date;
     content: string;

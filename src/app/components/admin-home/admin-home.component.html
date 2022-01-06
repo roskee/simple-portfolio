@@ -30,20 +30,22 @@
                                     <div class='card-header'>{{project.title}}</div>
                                     <div class='card-body'>
                                         <div class='row'>
-                                            <div class='col-11'>{{project.shortDescription}}</div>
-                                            <!-- <div class='col-1 text-end'>
-                                                <div class='btn btn-outline-primary'>View</div>
-                                            </div> -->
-                                            <div class='col-1 text-end'>
+                                            <div class='col-lg-9'>{{project.shortDescription}}</div>
+                                            <div class='col-lg-1 text-end m-1'>
+                                                <div class='btn btn-outline-primary'>Delete</div>
+                                            </div>
+                                            <div class='col-lg-1 text-end m-1'>
                                                 <div class='btn btn-outline-primary'
                                                     (click)="routeTo('addProject',project)">Edit</div>
                                             </div>
+
                                         </div>
                                     </div>
 
                                 </li>
                                 <li class="list-group-item text-end">
-                                    <div class='btn btn-outline-primary mt-2' (click)="routeTo('addProject')">Add New
+                                    <div class='col-3 btn btn-outline-primary mt-2' (click)="routeTo('addProject')">Add
+                                        New
                                     </div>
                                 </li>
                             </ul>
@@ -63,11 +65,11 @@
                                     <div class='card-header'>{{skill.title}}</div>
                                     <div class='card-body'>
                                         <div class='row'>
-                                            <div class='col-11'>{{skill.description}}</div>
-                                            <!-- <div class='col-1 text-end'>
-                                                <div class='btn btn-outline-primary'>View</div>
-                                            </div> -->
-                                            <div class='col-1 text-end'>
+                                            <div class='col-lg-9'>{{skill.description}}</div>
+                                            <div class='col-lg-1 text-end m-1'>
+                                                <div class='btn btn-outline-primary'>Delete</div>
+                                            </div>
+                                            <div class='col-lg-1 text-end m-1'>
                                                 <div class='btn btn-outline-primary'
                                                     (click)="routeToSkill('addSkill',skill)">Edit</div>
                                             </div>
@@ -76,7 +78,8 @@
 
                                 </li>
                                 <li class="list-group-item text-end">
-                                    <div class='btn btn-outline-primary mt-2' (click)="routeToSkill('addSkill')">Add New
+                                    <div class='col-3 btn btn-outline-primary mt-2' (click)="routeToSkill('addSkill')">
+                                        Add New
                                     </div>
                                 </li>
                             </ul>
@@ -87,7 +90,40 @@
                         <h6>Editing Skill</h6>
                         <app-add-skill-form [skill]="skill"></app-add-skill-form>
                     </div>
-                    <app-add-opinion-form *ngSwitchCase="'opinion'"></app-add-opinion-form>
+                    <div *ngSwitchCase="'opinion'">
+                        <div class=".container">
+                            <h6>Your Opinions</h6>
+                            <ul class="list-group">
+                                <li *ngFor="let opinion of opinions" class="list-group-item">
+
+                                    <div class='card-header'>{{opinion.title}}</div>
+                                    <div class='card-body'>
+                                        <div class='row'>
+                                            <div class='col-lg-9'>{{opinion.content.substring(0,200)}} . . .</div>
+                                            <div class='col-lg-1 text-end m-1'>
+                                                <div class='btn btn-outline-primary'>Delete</div>
+                                            </div>
+                                            <div class='col-lg-1 text-end m-1'>
+                                                <div class='btn btn-outline-primary'
+                                                    (click)="routeToOpinion('addOpinion',opinion)">Edit</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li class="list-group-item text-end">
+                                    <div class='col-3 btn btn-outline-primary mt-2'
+                                        (click)="routeToOpinion('addOpinion')">Add New
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class='container' *ngSwitchCase="'addOpinion'">
+                        <h6>Editing Opinion</h6>
+                        <app-add-opinion-form [opinion]="opinion"></app-add-opinion-form>
+                    </div>
                     <app-about-form *ngSwitchCase="'about'"></app-about-form>
                 </div>
             </div>

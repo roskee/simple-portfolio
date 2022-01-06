@@ -16,7 +16,7 @@ export class OpinionsPageComponent implements OnInit {
   ngOnInit(): void {
     this.opinionService.getOpinions().subscribe((opinions) => (this.opinions = opinions));
   }
-  navigate(id: number): void {
+  navigate(id?: number): void {
     this.router.navigate(['opinionview', id])
   }
 }
