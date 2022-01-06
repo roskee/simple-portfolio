@@ -1,12 +1,15 @@
-interface Image {
+export interface Image {
+    id: number;
     title: string;
     src: string;
     description: string;
 }
-interface Platform{
+export interface Platform{
+    id: number;
     platform: string;
 }
-interface Tool{
+export interface Tool{
+    id: number;
     tool: string;
 }
 export interface Project {
@@ -19,4 +22,5 @@ export interface Project {
     images: Array<Image>;
     madeWith: Array<Tool>;
     platforms: Array<Platform>;
+    featured:boolean
 }

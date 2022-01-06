@@ -1,0 +1,60 @@
+<div class='card m-3'>
+    <div class="row row-cols-2 m-1">
+        <div class='col-2'>
+            <div class=".container h-100">
+                <div class="d-grid gap-2">
+                    <button style="text-align: left;" class="btn {{currentRoute=='project'? 'btn-primary':'btn-outline-primary'}}" type="button"
+                        (click)="routeTo('project')">Manage Projects</button>
+                    <button style="text-align: left;" class="btn {{currentRoute=='skill'? 'btn-primary':'btn-outline-primary'}}" type="button"
+                        (click)="routeTo('skill')">Manage Skills</button>
+                    <button style="text-align: left;" class="btn {{currentRoute=='opinion'? 'btn-primary':'btn-outline-primary'}}" type="button"
+                        (click)="routeTo('opinion')">Manage Opinions</button>
+                    <button style="text-align: left;" class="btn {{currentRoute=='about'? 'btn-primary':'btn-outline-primary'}}" type="button"
+                        (click)="routeTo('about')">Manage About</button>
+                </div>
+            </div>
+        </div>
+        <div class='col-10'>
+            <div class="card p-3 m-1">
+                <div [ngSwitch]="currentRoute">
+                    <div *ngSwitchCase="'project'">
+                        <div class=".container">
+                            <h6>Your Projects</h6>
+                            <ul class="list-group">
+                                <li *ngFor="let project of projects" class="list-group-item">
+
+                                    <div class='card-header'>{{project.title}}</div>
+                                    <div class='card-body'>
+                                        <div class='row'>
+                                            <div class='col-11'>{{project.shortDescription}}</div>
+                                            <!-- <div class='col-1 text-end'>
+                                                <div class='btn btn-outline-primary'>View</div>
+                                            </div> -->
+                                            <div class='col-1 text-end'>
+                                                <div class='btn btn-outline-primary'
+                                                    (click)="routeTo('addProject',project)">Edit</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li class="list-group-item text-end">
+                                    <div class='btn btn-outline-primary mt-2' (click)="routeTo('addProject')">Add New
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="'addProject'">
+                        <h6>Editing Project</h6>
+                        <app-add-project-form [project]="project"></app-add-project-form>
+                    </div>
+                    <app-add-skill-form *ngSwitchCase="'skill'"></app-add-skill-form>
+                    <app-add-opinion-form *ngSwitchCase="'opinion'"></app-add-opinion-form>
+                    <app-about-form *ngSwitchCase="'about'"></app-about-form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

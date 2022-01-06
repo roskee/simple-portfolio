@@ -3,17 +3,17 @@
         {
             "id": 1,
             "title": "Random Thoughts",
-            "short_description": "A simple app to share your thoughts to other people",
+            "shortDescription": "A simple app to share your thoughts to other people",
             "github": "www.github.com/roskee/random-thoughts",
             "playstore": "play.google.com/random-thoughts",
             "video": "randomThoughts/videos/intro.mp4",
-            "made_with": [
-                "Flutter",
-                "Firebase"
+            "madeWith": [
+               {"tool": "Flutter"},
+                {"tool":"Firebase"}
             ],
             "platforms": [
-                "Android",
-                "iOS"
+                {"platform":"Android"},
+                {"platform":"iOS"}
             ],
             "images": [
                 {
@@ -27,17 +27,17 @@
         {
             "id": 2,
             "title": "Ethio Betting Tips",
-            "short_description": "An app for football fans to look for betting tips",
+            "shortDescription": "An app for football fans to look for betting tips",
             "github": "www.github.com/roskee/ethio-betting-tips",
             "playstore": "play.google.com/ethio-betting-tips",
             "video": "localhost/static/videos/ethio-betting-tips",
-            "made_with": [
-                "Flutter",
-                "Firebase"
+            "madeWith": [
+                {"tool":"Flutter"},
+                {"tool":"Firebase"}
             ],
             "platforms": [
-                "Android",
-                "iOS"
+                {"platform":"Android"},
+                {"platform":"iOS"}
             ],
             "images": [
                 {
@@ -51,17 +51,17 @@
         {
             "id": 3,
             "title": "Detective",
-            "short_description": "A game that takes a user to a detective carrier",
+            "shortDescription": "A game that takes a user to a detective carrier",
             "github": "www.github.com/roskee/detective",
             "playstore": "play.google.com/detective",
             "video": "localhost/static/videos/detective",
-            "made_with": [
-                "Flutter",
-                "Firebase"
+            "madeWith": [
+                {"tool":"Flutter"},
+                {"tool":"Firebase"}
             ],
             "platforms": [
-                "Android",
-                "iOS"
+                {"platform":"Android"},
+                {"platform":"iOS"}
             ],
             "images": [
                 {
@@ -159,7 +159,7 @@
                 "gradeBase": 4
             }
         ],
-        "top_certificates": [
+        "topCertificates": [
             {
                 "title": "CISCO",
                 "school": "Udemy.com"
@@ -208,5 +208,20 @@
             "date": "2020-12-12",
             "content": "Yes, This is the most annoying question almost every one of us face when we finish the basic programming courses like C++ and Java. Should I learn Web, Mobile, Desktop, AI, Database, Security, Gaming, Design, et cetera the choices are limitless. Even if you do decide on one of this, the next, even harder, question is the choice of languages, frameworks, libraries and data stores to start your journey. React, Angular, Native Javascript, ASP.Net, Vue, and many annoyingly many frameworks just for frontend web development. Java, NodeJS, PHP, SpringBoot, Laravel, C#, C++, DJango, and many languages to work on your backend. Ufff!!! This is becoming more and more complex without any hint of a solution. In conclusion, my experience with this was that I decided to work on the field I was really interested on, which was mobile app development, and then I chased frameworks and languages that big corporates currently use. The reason for this was that languages and frameworks that big companies like microsoft and google use don't change that much. This gives me the advantage of not wasting my time on something that is going to be obselute in the next few years or months."
         }
+    ],
+    "platforms":[
+        {"platform":"Android"},
+        {"platform":"iOS"},
+        {"platform":"Windows"},
+        {"platform":"MacOS"},
+        {"platform":"Linux"}
+    ],
+    "tools":[
+        {"tool":"Flutter"},
+        {"tool":"Firebase"},
+        {"tool":"NodeJS"},
+        {"tool":"Spring Boot"},
+        {"tool":"MySQL"},
+        {"tool":"Angular"}
     ]
 }

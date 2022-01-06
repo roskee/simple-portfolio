@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,6 +19,11 @@ import { OpinionsPageComponent } from './components/opinions-page/opinions-page.
 import { SearchViewComponent } from './components/search-view/search-view.component';
 import { SkillsPageComponent } from './components/skills-page/skills-page.component';
 import { OpinionViewComponent } from './components/opinion-view/opinion-view.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AddProjectFormComponent } from './components/forms/add-project-form/add-project-form.component';
+import { AddOpinionFormComponent } from './components/forms/add-opinion-form/add-opinion-form.component';
+import { AddSkillFormComponent } from './components/forms/add-skill-form/add-skill-form.component';
+import { AboutFormComponent } from './components/forms/about-form/about-form.component';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +53,11 @@ const appRoutes: Routes = [
   {
     path:'opinionview/:id',
     component:OpinionViewComponent
+  },
+  // TODO: modify latter
+  {
+    path: 'admin',
+    component: AdminHomeComponent
   }
 ]
 @NgModule({
@@ -65,10 +76,17 @@ const appRoutes: Routes = [
     OpinionsPageComponent,
     SearchViewComponent,
     SkillsPageComponent,
-    OpinionViewComponent
+    OpinionViewComponent,
+    AdminHomeComponent,
+    AddProjectFormComponent,
+    AddOpinionFormComponent,
+    AddSkillFormComponent,
+    AboutFormComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule, RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   providers: [],
