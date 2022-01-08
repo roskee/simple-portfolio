@@ -17,6 +17,10 @@ public class SkillController {
   public List<Skill> getSkills(){
     return skillService.getSkills();
   }
+  @GetMapping(path="certificates")
+  public List<Certificate> getCertificates(){
+    return skillService.getCertificates();
+  }
   @GetMapping(path = "topCertificates")
   public List<Certificate> getTopCertificates(){
     return skillService.getTopCertificates();

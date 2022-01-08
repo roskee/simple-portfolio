@@ -12,7 +12,7 @@ export class AboutService {
   private apiUrl = "http://localhost:5000";
   constructor(private http: HttpClient) { }
   getAboutInfo(): Observable<AboutInfo> {
-    return this.http.get<AboutInfo>(this.apiUrl + "/about");// /about/one
+    return this.http.get<AboutInfo>(this.apiUrl + "/about/one");// /about/one
   }
   getSkills(): Observable<Skill[]> {
     return this.http.get<Skill[]>(this.apiUrl + "/skills");
@@ -22,5 +22,8 @@ export class AboutService {
   }
   getTopCertificates(): Observable<Certificate[]> {
     return this.http.get<Certificate[]>(this.apiUrl + "/skills/topCertificates")
+  }
+  getCertificates(): Observable<Certificate[]>{
+    return this.http.get<Certificate[]>(this.apiUrl + "/skills/certificates");
   }
 }

@@ -16,12 +16,13 @@ export class AboutPageComponent implements OnInit {
   ngOnInit(): void {
     this.aboutService.getAboutInfo().subscribe((aboutInfo) => (this.aboutInfo = aboutInfo));
     //TODO: Temporary
-    this.aboutService.getSkills().subscribe((skills) => {
-      for (let skill of skills) {
-        for (let certi of skill.certificates)
-          if (certi.topCertificate)
-            this.topCertificates.push(certi);
-      }
-    });
+    // this.aboutService.getSkills().subscribe((skills) => {
+    //   for (let skill of skills) {
+    //     for (let certi of skill.certificates)
+    //       if (certi.topCertificate)
+    //         this.topCertificates.push(certi);
+    //   }
+    // });
+    this.aboutService.getTopCertificates().subscribe((topCertificates) => (this.topCertificates = topCertificates));
   }
 }

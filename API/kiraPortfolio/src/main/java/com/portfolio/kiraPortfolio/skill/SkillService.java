@@ -26,4 +26,8 @@ public class SkillService {
     System.out.println(certificates.size());
     return certificates;
   }
+
+  public List<Certificate> getCertificates() {
+    return certificateRepository.findAll();
+  }
 }

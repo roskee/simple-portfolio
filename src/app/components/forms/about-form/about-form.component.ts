@@ -133,16 +133,18 @@ export class AboutFormComponent implements OnInit {
 
     });
     // TODO: temporary
-    this.aboutService.getSkills().subscribe((skills) => {
-      for (let skill of skills) {
-        for (let certi of skill.certificates) {
-          this.certificates.push(certi);
-          if (certi.topCertificate)
-            this.topCertificates.push(certi);
-        }
-      }
-      this.validate();
-    });
+    // this.aboutService.getSkills().subscribe((skills) => {
+    //   for (let skill of skills) {
+    //     for (let certi of skill.certificates) {
+    //       this.certificates.push(certi);
+    //       if (certi.topCertificate)
+    //         this.topCertificates.push(certi);
+    //     }
+    //   }
+    //   this.validate();
+    // });
+    this.aboutService.getTopCertificates().subscribe((topCertificates) => { this.topCertificates = topCertificates; this.validate(); });
+    this.aboutService.getCertificates().subscribe((certificates) => { this.certificates = certificates; this.validate(); });
     this.aboutForm.disable();
   }
 
