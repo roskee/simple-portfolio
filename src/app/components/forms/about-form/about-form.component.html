@@ -1,5 +1,6 @@
 <div class=".container">
-    <h6>Your About Information</h6>
+    <h6>Your About Information<button (click)="enableEditing()"
+            class='btn btn-link ms-2'>{{isEditing?'Cancel':'Edit'}}</button></h6>
     <form class="form" [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
         <div class='row mt-2'>
             <div class='form-group col-lg-3'>
@@ -80,12 +81,15 @@
             <div class="form-group col-lg-4 mt-3">
                 <label for='certificates' class='form-label'>Top Certificates</label>
                 <div class='d-grid'>
-                    <button style="text-align: left;"
+                    <button style="text-align: left;" [disabled]="!isEditing"
                         class="btn {{certificatesValidate?'btn-outline-success':'btn-outline-danger'}} dropdown-toggle"
                         type="button" id="certificates" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                         aria-expanded="false">
                         <span class='badge bg-primary m-1'
-                            *ngFor="let certificate of topCertificates">{{certificate.title}}</span>
+                            *ngFor="let certificate of topCertificates.slice(0,3)">{{certificate.title}}</span>
+                        <span class='badge bg-primary m-1'
+                            *ngIf="topCertificates.length>3">...{{topCertificates.length-3}} More</span>
+
                     </button>
                     <ul class="dropdown-menu col-4" aria-labelledby="dropdownMenuClickableInside">
                         <div *ngFor="let certificate of certificates" (click)="selectCertificate(certificate)"
@@ -107,7 +111,8 @@
                             <input formControlName='phone' type='tel'
                                 class="form-control {{phone!.invalid?'is-invalid':'is-valid'}}">
                         </div>
-                        <div class='col-lg-3 mb-1 text-end'><button type='button' [disabled]="phone!.invalid"
+                        <div class='col-lg-3 mb-1 text-end'><button type='button'
+                                [disabled]="!isEditing || phone!.invalid || !(this.phone!.value)"
                                 class='btn btn-outline-success' (click)="insertPhone()">Add</button></div>
                     </div>
                 </div>
@@ -115,7 +120,7 @@
                 <div class="card {{phonesValidate?'border-success':'border-danger'}}">
                     <div id="phones" class=".container" style="height: 70px;overflow-y: auto;">
                         <span class="badge bg-success m-2" *ngFor="let phone of phones">
-                            {{phone.phone}}<button (click)="removePhone(phone)"
+                            {{phone.phone}}<button (click)="removePhone(phone)" [disabled]="!isEditing"
                                 class="btn btn-danger badge ms-1">*</button>
                         </span>
                     </div>
@@ -132,7 +137,8 @@
                             <input formControlName='email' type='tel'
                                 class="form-control {{email!.invalid?'is-invalid':'is-valid'}}">
                         </div>
-                        <div class='col-lg-3 mb-1 text-end'><button [disabled]="email!.invalid" type='button'
+                        <div class='col-lg-3 mb-1 text-end'><button
+                                [disabled]="!isEditing || email!.invalid || !(this.email!.value)" type='button'
                                 class='btn btn-outline-success' (click)="insertEmail()">Add</button></div>
                     </div>
                 </div>
@@ -140,7 +146,7 @@
                 <div class="card {{emailsValidate?'border-success':'border-danger'}}">
                     <div id="emails" class=".container" style="height: 70px;overflow-y: auto;">
                         <span class="badge bg-success m-2" *ngFor="let email of emails">
-                            {{email.email}}<button (click)="removeEmail(email)"
+                            {{email.email}}<button (click)="removeEmail(email)" [disabled]="!isEditing"
                                 class="btn btn-danger badge ms-1">*</button>
                         </span>
                     </div>
@@ -150,8 +156,8 @@
         </div>
         <div class='row mt-2'>
             <div class='col-12 text-end'>
-                <button [disabled]="aboutForm!.invalid || !emailsValidate || !phonesValidate" type="submit"
-                    class="btn btn-outline-success">Update About
+                <button [disabled]="!isEditing || aboutForm!.invalid || !emailsValidate || !phonesValidate"
+                    type="submit" class="btn btn-outline-success">Update About
                     Info</button>
             </div>
         </div>

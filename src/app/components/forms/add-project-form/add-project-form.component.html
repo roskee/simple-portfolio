@@ -43,7 +43,11 @@
                             class="btn {{toolsValidate?'btn-outline-success':'btn-outline-danger'}} dropdown-toggle"
                             type="button" id="tools" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                             aria-expanded="false">
-                            <span class='badge bg-primary m-1' *ngFor="let tool of selectedTools">{{tool.tool}}</span>
+                            <span class='badge bg-primary m-1'
+                                *ngFor="let tool of selectedTools.slice(0,3)">{{tool.tool}}</span>
+                            <span class='badge bg-primary m-1' *ngIf="selectedTools.length>3">
+                                ..{{selectedTools.length-3}} More
+                            </span>
                         </button>
                         <ul class="dropdown-menu col-4" aria-labelledby="dropdownMenuClickableInside">
 
@@ -64,7 +68,10 @@
                             type="button" id="platforms" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                             aria-expanded="false">
                             <span class='badge bg-primary m-1'
-                                *ngFor="let platform of selectedPlatforms">{{platform.platform}}</span>
+                                *ngFor="let platform of selectedPlatforms.slice(0,3)">{{platform.platform}}</span>
+                            <span class='badge bg-primary m-1' *ngIf="selectedPlatforms.length>3">
+                                ...{{selectedPlatforms.length-3}} More
+                            </span>
                         </button>
                         <ul class="dropdown-menu col-4" aria-labelledby="dropdownMenuClickableInside">
                             <div *ngFor="let platform of platforms" (click)="selectPlatform(platform)"

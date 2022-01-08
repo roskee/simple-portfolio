@@ -10,6 +10,12 @@ import { Certificate } from 'src/interfaces/skill';
   styleUrls: ['./about-form.component.css']
 })
 export class AboutFormComponent implements OnInit {
+  isEditing: boolean = false;
+  enableEditing() {
+    if (this.isEditing = !this.isEditing)
+      this.aboutForm.enable();
+    else this.aboutForm.disable();
+  }
   aboutForm: FormGroup = {} as FormGroup;
   certificates: Certificate[] = [];
   topCertificates: Certificate[] = [];
@@ -118,11 +124,11 @@ export class AboutFormComponent implements OnInit {
       phone: new FormControl(this.addPhone.phone, [
 
         Validators.pattern("[+][1-9][0-9]+"),
-        Validators.maxLength(15)
+        Validators.maxLength(15),
       ]),
       email: new FormControl(this.addEmail.email, [
         Validators.pattern(".+@.+[.].+"),
-        Validators.maxLength(40)
+        Validators.maxLength(40),
       ])
 
     });
@@ -137,6 +143,7 @@ export class AboutFormComponent implements OnInit {
       }
       this.validate();
     });
+    this.aboutForm.disable();
   }
 
 }

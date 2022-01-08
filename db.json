@@ -140,7 +140,8 @@
                     "id": 4,
                     "title": "LinkedIn",
                     "date": "2020-12-12",
-                    "image": "randomThoughts/images/home.jpg"
+                    "image": "randomThoughts/images/home.jpg",
+                    "topCertificate":true
                 },
                 {
                     "id": 5,
@@ -169,7 +170,8 @@
                     "id": 7,
                     "title": "Udemy",
                     "date": "2020-12-12",
-                    "image": "randomThoughts/images/home.jpg"
+                    "image": "randomThoughts/images/home.jpg",
+                    "topCertificate":true
                 },
                 {
                     "id": 8,
