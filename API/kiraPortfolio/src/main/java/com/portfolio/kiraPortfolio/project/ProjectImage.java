@@ -27,7 +27,7 @@ public class ProjectImage {
   @JoinColumn(name = "project_Id")
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   private Project project;
-
+  public Project getProject(){return project;}
   public ProjectImage(){
 
   }

@@ -99,7 +99,7 @@
                                     <div class='card-header'>{{opinion.title}}</div>
                                     <div class='card-body'>
                                         <div class='row'>
-                                            <div class='col-lg-9'>{{opinion.content.substring(0,200)}} . . .</div>
+                                            <div class='col-lg-9'>{{opinion.content.substring(0,200)}}<span *ngIf="opinion.content.length>200"> . . .</span></div>
                                             <div class='col-lg-1 text-end m-1'>
                                                 <div class='btn btn-outline-primary'>Delete</div>
                                             </div>

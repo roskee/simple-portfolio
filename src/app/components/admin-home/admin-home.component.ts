@@ -34,6 +34,11 @@ export class AdminHomeComponent implements OnInit {
     this.skillService.getAboutInfo().subscribe((aboutInfo) => (this.aboutInfo = aboutInfo));
   }
   routeTo(route: string, project?: Project): void {
+    //TODO: Check this for safety:(
+    this.projectsService.getProjects().subscribe((projects) => this.projects = projects);
+    this.skillService.getSkills().subscribe((skills) => this.skills = skills);
+    this.opinionService.getOpinions().subscribe((opinions) => this.opinions = opinions);
+    this.skillService.getAboutInfo().subscribe((aboutInfo) => (this.aboutInfo = aboutInfo));
     this.currentRoute = route;
     if (project != null) this.project = project;
     else this.project = {} as Project;

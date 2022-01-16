@@ -7,7 +7,7 @@ import { Platform } from 'src/interfaces/project';
   providedIn: 'root'
 })
 export class PlatformService {
-  apiUrl: string = "http://localhost:5000/platforms";
+  apiUrl: string = "http://localhost:5000/projects/platforms";
   constructor(private http: HttpClient) { }
   getPlatforms(): Observable<Platform[]> {
     return this.http.get<Platform[]>(this.apiUrl);

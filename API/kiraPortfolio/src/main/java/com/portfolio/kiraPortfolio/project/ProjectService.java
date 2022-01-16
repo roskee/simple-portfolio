@@ -29,4 +29,12 @@ public class ProjectService {
   public List<Project> getProjectsWithFeatured(Boolean featured){
     return projectRepository.findByFeatured(featured);
   }
+
+  public List<Platform> getPlatforms() {
+    return projectRepository.findPlatforms();
+  }
+
+  public List<Tool> getTools() {
+    return projectRepository.findTools();
+  }
 }

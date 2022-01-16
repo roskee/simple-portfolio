@@ -11,4 +11,9 @@ import java.util.Optional;
 public interface ProjectRepository extends JpaRepository<Project,Long> {
   //@Query(value = "select p from Project p where p.featured=?1",nativeQuery = true)
   List<Project> findByFeatured(Boolean featured);
+  @Query(value="select p from Platform p")
+  List<Platform> findPlatforms();
+
+  @Query(value="select t from Tool t")
+  List<Tool> findTools();
 }

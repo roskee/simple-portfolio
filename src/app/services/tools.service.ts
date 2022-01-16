@@ -7,7 +7,7 @@ import { Tool } from 'src/interfaces/project';
   providedIn: 'root'
 })
 export class ToolsService {
-  apiUrl: string = "http://localhost:5000/tools";
+  apiUrl: string = "http://localhost:5000/projects/tools";
   constructor(private http: HttpClient) {
     
   }

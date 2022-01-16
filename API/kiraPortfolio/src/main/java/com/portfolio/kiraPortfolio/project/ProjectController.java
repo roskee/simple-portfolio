@@ -1,8 +1,10 @@
 package com.portfolio.kiraPortfolio.project;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -26,8 +28,20 @@ public class ProjectController {
   public Project getProjectsWith(@PathVariable Long id){
     return projectService.getProject(id);
   }
-  @PostMapping
-  public Project addProject(@RequestBody Project project){
+
+  @GetMapping(path="platforms")
+  public List<Platform> getPlatforms(){
+    return projectService.getPlatforms();
+  }
+  @GetMapping(path="tools")
+  public List<Tool> getTools(){
+    return projectService.getTools();
+  }
+
+  @PostMapping(consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
+  public Project addProject(@ModelAttribute Project project){
+   // System.out.println(file);
     return projectService.addProject(project);
   }
+  //@PostMapping(path="tools")
 }

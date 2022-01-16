@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ValidationErrors, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { PlatformService } from 'src/app/services/platform.service';
+import { ProjectsService } from 'src/app/services/projects.service';
 import { ToolsService } from 'src/app/services/tools.service';
 import { Image, Platform, Project, Tool } from 'src/interfaces/project';
 
@@ -22,7 +23,7 @@ export class AddProjectFormComponent implements OnInit {
   addedImages!: FileList | null;
   addedVideo!: FileList | null;
   constructor(private platformService: PlatformService,
-    private toolsService: ToolsService) { }
+    private toolsService: ToolsService, private projectService: ProjectsService) { }
   onSubmitForm(): void {
     this.project = {
       title: this.title!.value,
@@ -36,6 +37,9 @@ export class AddProjectFormComponent implements OnInit {
       featured: this.featured!.value
     }
     console.log(this.project);
+    this.projectService.postProject(this.project).subscribe((project) => {
+      console.log(project);
+    })
   }
   imagesValueChanged(event: Event): void {
     this.addedImages = (event.currentTarget as HTMLInputElement).files;

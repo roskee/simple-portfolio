@@ -17,12 +17,12 @@ public class Opinion {
   )
   private Long id;
   @Column(
-    nullable = false
+    nullable = false,
+    length = 10485760
   )
+
   private String title;
-  @Column(
-    nullable = false
-  )
+  @Transient
   private LocalDate date;
   @Column(
     nullable = false
@@ -50,7 +50,7 @@ public class Opinion {
   }
 
   public void setDate(LocalDate date) {
-    this.date = date;
+    //this.date = LocalDate.now();
   }
 
   public String getContent() {
@@ -61,13 +61,24 @@ public class Opinion {
     this.content = content;
   }
 
-  public Opinion(Long id, String title, LocalDate date, String content) {
+  public Opinion(Long id, String title, String content) {
     this.id = id;
     this.title = title;
-    this.date = date;
+    this.date = LocalDate.now();
     this.content = content;
   }
 
   public Opinion() {
+    this.date = LocalDate.now();
+  }
+
+  @Override
+  public String toString() {
+    return "Opinion{" +
+      "id=" + id +
+      ", title='" + title + '\'' +
+      ", date=" + date +
+      ", content='" + content + '\'' +
+      '}';
   }
 }

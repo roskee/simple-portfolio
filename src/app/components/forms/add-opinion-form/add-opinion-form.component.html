@@ -1,5 +1,11 @@
 <div class='.container'>
-    <form class='form' [formGroup]='form'>
+    <div *ngIf="saved"
+    class='alert alert-success alert-dismissible fade show' role='alert'>Saved Successfully!!!</div>
+
+    <div *ngIf="error"
+    class='alert alert-danger alert-dismissible fade show' role='alert'>Error while Saving!!!</div>
+
+    <form class='form' [formGroup]='form' (ngSubmit)="onSubmitForm()">
         <div class='form-group mt-2'>
             <label for='title' class='form-label'>Title</label>
             <input formControlName="title" id='title' type="text"
@@ -18,4 +24,5 @@
                 Opinion</button>
         </div>
     </form>
+    
 </div>
